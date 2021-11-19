@@ -60,6 +60,24 @@
  .nav-item:hover::after {
 	 width: 60%;
 }
+
+ .nav-btn button {
+	 border: none;
+	 padding: 0.5rem 1rem;
+	 border-radius: 0.5rem;
+	 background: #23cbfa;
+	 color: #063ab3;
+	 font-family: inherit;
+	 font-size: inherit;
+	 font-weight: bold;
+	 cursor: pointer;
+	 transition: 0.1s;
+}
+ .nav-btn button:hover {
+	 background: rgba(35, 201, 247, 0.564);
+}
+
+
 										/* MAIN */
 
 
@@ -121,11 +139,6 @@
 	background: #000;
 }
 
-										/* FOOTER */
 
-footer {
-	text-align: center;
-	background-color: #0f499b;
-	color: #fff;
-	padding: 70px 0;
-}
+
+  
