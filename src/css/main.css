@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&display=swap&family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&display=swap&family=Montserrat:wght@500&display=swap&family=Shippori+Antique&display=swap");
  *, *::before, *::after {
 	 box-sizing: border-box;
 	 margin: 0;
@@ -122,23 +122,61 @@
 	border-radius: 50px;
 }
 
+.search-results{
+	z-index: 1;
+	position: absolute;
+	background: #fafafa;
+	list-style: none;
+	width: 80%;
+	border-left: solid 1px grey;
+	border-right: solid 1px grey;
+	color: black;
+}
+.search-results li {
+	border-bottom: solid 1px grey;
+	height: 50px;
+	line-height: 50px;
+	padding-left: 20px;
+}
+
 										/* NEW RELEASES */
 
-.new-releases-section{
+.popular-section{
 	min-height: 100vh;
 }
 
-.new-releases-cont{
+.popular-cont{
 	padding-top: 80px;
 	
 }
 
-.new-release {
-	width: 100px;
-	height: 100px;
-	background: #000;
+
+.film-list{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
 }
 
+.popular-film{
+	display: flex;
+	flex-direction: column;
+	width: 150px;
+	height: 220px;
+	margin: 20px 20px 60px ;
+	font-family: "Shippori Antique";
+}
 
+.popular-film img {
+	border-radius: 20px;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	margin-bottom: 10px;
+}
 
-  
+footer {
+	text-align: center;
+	background-color: #0f499b;
+	color: #fff;
+	padding: 70px 0;
+} 
