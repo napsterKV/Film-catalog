@@ -1,1 +1,14 @@
-<img src="{{}}" alt="" class="film-title-img">
+<style>
+  .film-title-sect {
+    background-image: url("https://image.tmdb.org/t/p/w1920_and_h800_multi_faces{{backdrop_path}}");
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, .65);
+    background-blend-mode: darken;
+  }
+</style>
+<img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="Poster">
+<div class="desc">
+  <h2>{{title}}</h2>
+  <p>{{overview}}</p>
+  <h4>Homepage: <a href="{{homepage}}">{{homepage}}</a></h4>
+</div>
