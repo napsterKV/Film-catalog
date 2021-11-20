@@ -1,6 +1,6 @@
 let debounce = require('lodash.debounce');
-import filmLayout from "./templates/film.hbs"
-import searchResultLayout from "./templates/searchResult.hbs";
+import filmLayout from "../templates/film.hbs"
+import searchResultLayout from "../templates/searchResult.hbs";
 const MOVIE_API = "https://api.themoviedb.org/3/movie/";
 const refs = {
     searchForm: document.querySelector(".search-form"),

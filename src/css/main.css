@@ -4,6 +4,11 @@
 	 margin: 0;
 	 padding: 0;
 }
+
+a {
+	text-decoration: none;
+}
+
  body {
 	 font-family: "Poppins", sans-serif;
 	 background: #fafafa;
@@ -115,6 +120,7 @@
 	border-radius: 50px;
 	border: none;
 	margin: 0;
+	outline: none;
 }
 
 .search input[type=submit] {
@@ -147,7 +153,6 @@
 
 .popular-cont{
 	padding-top: 80px;
-	
 }
 
 
@@ -155,6 +160,7 @@
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
+	margin-bottom: 35px;
 }
 
 .popular-film{
@@ -172,6 +178,11 @@
 	height: 100%;
 	position: relative;
 	margin-bottom: 10px;
+}
+
+.popular-film-title {
+	text-align: center;
+	color: #000;
 }
 
 footer {
