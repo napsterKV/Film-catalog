@@ -157,6 +157,7 @@ body {
 
 .popular-section{
 	min-height: 100vh;
+	margin-bottom: 30px;
 }
 
 .popular-cont{
@@ -174,6 +175,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	width: 150px;
+	position: relative;
 	height: 220px;
 	margin: 20px 20px 60px ;
 	font-family: "Shippori Antique";
@@ -187,6 +189,18 @@ body {
 	margin-bottom: 10px;
 }
 
+.popular-film-rating {
+	position: absolute;
+	color: white;
+	bottom: 0;
+	right: 0;
+	width: 50px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	border-bottom-right-radius: 18px;
+	border-top-left-radius: 18px;
+	background: rgb(208, 146, 12);
 .popular-film-title {
 	text-align: center;
 	color: #000;
@@ -203,4 +217,5 @@ footer .container {
 	display: flex;
 	text-align: center;
 	justify-content: space-around;
+}
 }
