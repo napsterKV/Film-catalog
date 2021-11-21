@@ -9,7 +9,7 @@ const refs = {
     popularFilmList: document.querySelector(".popular-film-list")
 }
 
-refs.searchInput.addEventListener("input",debounce(e => {
+refs.searchInput.addEventListener("input", debounce(e => {
     if(e.target.value != ''){
         fetch(`https://api.themoviedb.org/3/search/movie?api_key=170b9b9397b0574b7d603cba918ea1f4&language=en-US&query=${e.target.value}&page=1`).then(res => res.json())
     .then(res => {

@@ -1,14 +1,19 @@
 <style>
   .film-title-sect {
-    background-image: url("https://image.tmdb.org/t/p/w1920_and_h800_multi_faces{{backdrop_path}}");
+    background-image: url("https://image.tmdb.org/t/p/original{{backdrop_path}}");
     background-repeat: no-repeat;
-    background-color: rgba(0, 0, 0, .65);
+    background-color: rgba(0, 0, 0, .75);
     background-blend-mode: darken;
+    background-position: center;
+    background-size: cover;
   }
 </style>
-<img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="Poster">
+<img src="https://image.tmdb.org/t/p/w400{{poster_path}}" alt="Poster">
 <div class="desc">
   <h2>{{title}}</h2>
+  <h3>Release year: {{release_year}}</h3>
+  <h3>Tagline: "<span class="tagline">{{tagline}}</span>"</h3>
+  <h3>Description:</h3>
   <p>{{overview}}</p>
   <h4>Homepage: <a href="{{homepage}}">{{homepage}}</a></h4>
 </div>

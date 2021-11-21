@@ -5,7 +5,7 @@
   "main": "index.js",
   "homepage": "https://goitacademy.github.io/parcel-project-template",
   "scripts": {
-    "dev": "parcel src/*.html",
+    "dev": "node run-parcel.js",
     "build": "parcel build src/*.html --public-url /parcel-project-template/"
   },
   "repository": {
@@ -19,6 +19,7 @@
     "url": "https://github.com/goitacademy/parcel-project-template/issues"
   },
   "devDependencies": {
+    "express": "^4.17.1",
     "parcel-bundler": "^1.12.5",
     "parcel-plugin-handlebars-precompile": "^1.0.2",
     "parcel-plugin-nuke-dist": "^1.0.1",
@@ -26,6 +27,7 @@
     "sass": "^1.32.8"
   },
   "dependencies": {
+    "ha": "0.0.17",
     "jquery": "^3.6.0",
     "lodash.debounce": "^4.0.8"
   }
