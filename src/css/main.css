@@ -201,6 +201,8 @@ body {
 	border-bottom-right-radius: 18px;
 	border-top-left-radius: 18px;
 	background: rgb(208, 146, 12);
+}
+
 .popular-film-title {
 	text-align: center;
 	color: #000;
@@ -217,5 +219,4 @@ footer .container {
 	display: flex;
 	text-align: center;
 	justify-content: space-around;
-}
 }
