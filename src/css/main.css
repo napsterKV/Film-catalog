@@ -18,7 +18,6 @@ a {
 
 body {
   font-family: "Poppins", sans-serif;
-  background: #fafafa;
 }
 
 .container {
@@ -104,6 +103,15 @@ nav a {
 }
 
 									/* TOOLBAR */
+.light-theme {
+	background: #fafafa;
+	color: #000 !important;
+}
+
+.dark-theme {
+	background: rgb(22, 21, 27);
+	color: #ffffff !important;
+}
 
 .theme-switch {
   display: flex;
@@ -149,7 +157,7 @@ nav a {
   height: 100%;
   color: transparent;
   user-select: none;
-  background-color: #333;
+  background-color: rgb(22, 21, 27);
   border-radius: inherit;
   z-index: 1;
   cursor: pointer;
@@ -169,7 +177,7 @@ nav a {
 }
 
 .theme-switch__toggle:checked+.theme-switch__track {
-  background-color: #d3d3d4;
+  background-color: #ffffff;
 }
 
 .theme-switch__toggle:checked~.theme-switch__marker {
