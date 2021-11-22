@@ -1,13 +1,15 @@
 'use strict'
 
 import filmTitle from "../templates/film-homepage-title.hbs";
-import filmTrailer from "../templates/film-trailer.hbs"
+import filmTrailer from "../templates/film-trailer.hbs";
+import similarFilms from "../templates/similarFilms.hbs";
 
 const MOVIE_API = "https://api.themoviedb.org/3/movie/";
 const API_KEY = "170b9b9397b0574b7d603cba918ea1f4";
 
 const filmTitleSection = document.querySelector(".film-title");
 const filmTrailerSection = document.querySelector(".film-trailer");
+const similarFilmsSection = document.querySelector(".similar-films-list");
 
 const params = new URLSearchParams(window.location.search);
 let id = params.get('id');
@@ -34,3 +36,17 @@ fetch(`${MOVIE_API}${id}/videos?api_key=${API_KEY}&language=en-US`)
     }
   })
   .catch(error => console.error(error));
+
+  fetch(`${MOVIE_API}${id}/similar?api_key=${API_KEY}&language=en-US`)
+  .then(res => res.json())
+  .then(result => {
+    if(result.results){
+      result.results.length = 6;
+    };
+    result.results.forEach(res => {
+      res.vote_average = Math.round((res.vote_average + Number.EPSILON) * 100) / 100;
+    })
+    const similarFilmMarkup = similarFilms(result.results);
+    similarFilmsSection.innerHTML = similarFilmMarkup;
+  })
+
