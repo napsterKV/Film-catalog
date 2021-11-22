@@ -1,0 +1,104 @@
+@import url("./main.css");
+
+.film-title {
+    padding: 0;
+    padding-top: 110px;
+    padding-bottom: 50px;
+    display: flex;
+    color: #fff;
+}
+
+.film-title img {
+    margin-right: 100px;
+    border-radius: 20px;
+    -webkit-box-shadow: 9px 10px 12px 3px #595959;
+    box-shadow: 9px 10px 12px 3px #595959;
+}
+
+.film-title h2 {
+  font-size: 40px;
+  padding-bottom: 20px;
+  font-weight: 900;
+}
+
+.film-title h3 {
+  font-size: 25px;
+  padding-bottom: 20px;
+}
+
+.film-title h4 {
+  font-size: 19px;
+}
+
+.film-title h4>a {
+  color: #d3d621;
+}
+
+.film-title p {
+  font-size: 18px;
+  padding-bottom: 20px;
+}
+
+.tagline {
+  font-weight: normal;
+  color: #23cbfa;
+}
+
+.film-trailer iframe {
+  width: 100%;
+  height: 500px;
+  margin: 50px 0;
+}
+
+.section-title {
+  margin-left: 3.5%;
+  margin-bottom: 40px;
+}
+
+.film-similar-films {
+  width: 100%;
+}
+
+.similar-films-list {
+  display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	margin-bottom: 35px;
+}
+
+.similar-film {
+  display: flex;
+	flex-direction: column;
+	width: 150px;
+	position: relative;
+	height: 220px;
+	margin: 20px 20px 60px ;
+	font-family: "Shippori Antique";
+}
+
+.similar-film img {
+  border-radius: 20px;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	margin-bottom: 10px;
+}
+
+.similar-film-title{
+  text-align: center;
+	color: #000;
+}
+
+.similar-film-rating {
+	position: absolute;
+	color: white;
+	bottom: 0;
+	right: 0;
+	width: 50px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	border-bottom-right-radius: 18px;
+	border-top-left-radius: 18px;
+	background: rgb(208, 146, 12);
+}

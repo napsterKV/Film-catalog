@@ -4,7 +4,12 @@
 	 margin: 0;
 	 padding: 0;
 }
- body {
+
+a {
+	text-decoration: none;
+}
+
+body {
 	 font-family: "Poppins", sans-serif;
 	 background: #fafafa;
 }
@@ -36,6 +41,10 @@
 	 font-size: 2.5rem;
    	 font-family: 'Montserrat', sans-serif;
 	 margin-right: auto;
+}
+
+.nav-logo a {
+	color: #fff;
 }
  
  .nav-item {
@@ -115,6 +124,7 @@
 	border-radius: 50px;
 	border: none;
 	margin: 0;
+	outline: none;
 }
 
 .search input[type=submit] {
@@ -139,28 +149,33 @@
 	padding-left: 20px;
 }
 
+.search-results a {
+	color: #000;
+}
+
 										/* NEW RELEASES */
 
 .popular-section{
 	min-height: 100vh;
+	margin-bottom: 30px;
 }
 
 .popular-cont{
 	padding-top: 80px;
-	
 }
-
 
 .film-list{
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
+	margin-bottom: 35px;
 }
 
 .popular-film{
 	display: flex;
 	flex-direction: column;
 	width: 150px;
+	position: relative;
 	height: 220px;
 	margin: 20px 20px 60px ;
 	font-family: "Shippori Antique";
@@ -174,9 +189,34 @@
 	margin-bottom: 10px;
 }
 
+.popular-film-rating {
+	position: absolute;
+	color: white;
+	bottom: 0;
+	right: 0;
+	width: 50px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	border-bottom-right-radius: 18px;
+	border-top-left-radius: 18px;
+	background: rgb(208, 146, 12);
+}
+
+.popular-film-title {
+	text-align: center;
+	color: #000;
+}
+
 footer {
 	text-align: center;
-	background-color: #0f499b;
+	background-color: #00067e;
 	color: #fff;
-	padding: 70px 0;
+	padding: 35px 0;
 } 
+
+footer .container {
+	display: flex;
+	text-align: center;
+	justify-content: space-around;
+}
