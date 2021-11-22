@@ -1,0 +1,9 @@
+{{#each .}}
+<a href="/film.html?id={{id}}">
+  <div class="similar-film">
+    <img src="https://image.tmdb.org/t/p/original/{{poster_path}}" alt="">
+    <div class="similar-film-title">{{title}}</div>
+    <div class="similar-film-rating">{{vote_average}}</div>
+</div>
+</a>
+{{/each}}
