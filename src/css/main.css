@@ -34,8 +34,16 @@ nav {
   top: 0;
   width: 100%;
   font-family: "Poppins", sans-serif;
-  background: #00067e;
   color: white;
+  border-bottom: 1px solid #ffffff37;
+}
+
+.interface-obj-dark {
+  background: rgb(12, 0, 52);
+}
+
+.interface-obj-light {
+  background: #00067e;
 }
 
 nav a {
@@ -109,7 +117,7 @@ nav a {
 }
 
 .dark-theme {
-	background: rgb(22, 21, 27);
+	background: rgb(15, 14, 22);
 	color: #ffffff !important;
 }
 
@@ -191,9 +199,8 @@ nav a {
 									/* SEARCH SECTION */
 
 
-.search-section {
+section:nth-child(1) {
   margin-top: 66.4px;
-  background-color: #0f499b;
   min-height: 350px;
 }
 
@@ -309,7 +316,6 @@ nav a {
 
 footer {
   text-align: center;
-  background-color: #00067e;
   color: #fff;
   padding: 35px 0;
 }
