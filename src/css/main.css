@@ -177,7 +177,7 @@ nav a {
 }
 
 .theme-switch__toggle:checked+.theme-switch__track {
-  background-color: #ffffff;
+  background-color: #d3d3d4;
 }
 
 .theme-switch__toggle:checked~.theme-switch__marker {
