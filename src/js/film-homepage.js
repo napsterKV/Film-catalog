@@ -30,7 +30,6 @@ fetch(`${MOVIE_API}${id}/videos?api_key=${API_KEY}&language=en-US`)
     const teasers = result.results.filter(film => film.type === "Teaser");
     const trailer = trailers.length > 0 ? trailers[0] : teasers.length > 0 ? teasers[0] : null;
     if (trailer) {
-      console.log(trailer);
       const trailerMarkup = filmTrailer(trailer);
       filmTrailerSection.innerHTML = trailerMarkup;
     }

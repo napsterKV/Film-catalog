@@ -1,14 +1,37 @@
 <header>
-  <nav>
+  <nav class="interface-object">
     <div class="container">
       <ul class="nav-list">
         <li class="nav-logo">
-          <h6><a href="./index.html">Film catalog</a></h6>
+          <h6><a href="/">Film catalog</a></h6>
         </li>
         <li class="nav-item">About<i class="fa fa-chevron-up"></i></li>
         <li class="nav-item">Work<i class="fa fa-chevron-up"></i></li>
-        <li class="nav-item">Contact</li>
-        <li class="nav-btn"><button>sign in</button></li>
+        <li class="nav-item"><a href="#footer">Contacts</a></li>
+        <div class="toolbar">
+          <div class="theme-switch">
+            <svg class="theme-switch__icon" role="img" aria-label="Иконка солнца">
+              <use href="./images/sprite.svg#sun"></use>
+            </svg>
+
+            <div class="theme-switch__control">
+              <input
+                class="theme-switch__toggle"
+                type="checkbox"
+                name="theme"
+                id="theme-switch-toggle"
+                aria-label="Переключить между тёмной и светлой темой"
+              />
+              <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle">
+              </label>
+              <div aria-hidden="true" class="theme-switch__marker"></div>
+            </div>
+
+            <svg class="theme-switch__icon" aria-label="Иконка луны">
+              <use href="./images/sprite.svg#moon"></use>
+            </svg>
+          </div>
+        </div>
       </ul>
     </div>
   </nav>

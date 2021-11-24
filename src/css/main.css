@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&display=swap&family=Montserrat:wght@500&display=swap&family=Shippori+Antique&display=swap');
+
 *,
 *::before,
 *::after {
@@ -7,14 +8,18 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   text-decoration: none;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: #fafafa;
 }
+
 .container {
   position: relative;
   max-width: 1000px;
@@ -29,9 +34,22 @@ nav {
   top: 0;
   width: 100%;
   font-family: 'Poppins', sans-serif;
-  background: #00067e;
   color: white;
+  border-bottom: 1px solid #ffffff37;
 }
+
+.interface-obj-dark {
+  background: rgb(12, 0, 52);
+}
+
+.interface-obj-light {
+  background: #00067e;
+}
+
+nav a {
+  color: #fff;
+}
+
 .nav-list {
   display: flex;
   justify-content: flex-end;
@@ -39,6 +57,7 @@ nav {
   list-style: none;
   gap: 2rem;
 }
+
 .nav-logo {
   font-size: 2.5rem;
   font-family: 'Montserrat', sans-serif;
@@ -57,6 +76,7 @@ nav {
   position: relative;
   cursor: pointer;
 }
+
 .nav-item:after {
   position: absolute;
   content: '';
@@ -84,18 +104,107 @@ nav {
   cursor: pointer;
   transition: 0.1s;
 }
+
 .nav-btn button:hover {
   background: rgba(35, 201, 247, 0.564);
 }
+
+/* TOOLBAR */
+.light-theme {
+  background: #fafafa;
+  color: #000 !important;
+}
+
+.dark-theme {
+  background: rgb(15, 14, 22);
+  color: #ffffff !important;
+}
+
+.theme-switch {
+  display: flex;
+  align-items: center;
+}
+
+.theme-switch__icon {
+  color: currentColor;
+  height: 24px;
+  width: 24px;
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+.theme-switch__control {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+  width: 64px;
+  height: 32px;
+  border-radius: 50em;
+  padding: 3px 0;
+}
+
+.theme-switch__toggle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+}
+
+.theme-switch__track {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  user-select: none;
+  background-color: rgb(22, 21, 27);
+  border-radius: inherit;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.theme-switch__marker {
+  position: relative;
+  background-color: #fff;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  z-index: 2;
+  pointer-events: none;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  transform: translateX(3px);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-switch__toggle:checked + .theme-switch__track {
+  background-color: #d3d3d4;
+}
+
+.theme-switch__toggle:checked ~ .theme-switch__marker {
+  transform: translateX(35px);
+}
+
+/* MAIN */
 
 /* MAIN */
 
 /* SEARCH SECTION */
 
-.search-section {
+.hello-section {
   margin-top: 66.4px;
-  background-color: #0f499b;
   min-height: 350px;
+  background-image: url('https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces/jTiQAusGG4dVLSb1WHme9I9R4NN.jpg');
+  background-color: rgba(0, 0, 0, 0.8);
+  background-blend-mode: darken;
+  background-position: center;
+  background-size: cover;
 }
 
 .search-section-cont {
@@ -141,6 +250,7 @@ nav {
   border-right: solid 1px grey;
   color: black;
 }
+
 .search-results li {
   border-bottom: solid 1px grey;
   height: 50px;
@@ -209,15 +319,48 @@ nav {
 
 footer {
   text-align: center;
-  background-color: #00067e;
-  color: darkgrey;
+  color: #fff;
   padding: 35px 0;
 }
+
 .copyright {
-  color: darkgrey;
-}
-footer .container {
   display: flex;
   text-align: center;
   justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.mail svg {
+  width: 35px;
+  height: 35px;
+  transition: all 0.3s;
+  color: #fff;
+  margin-right: 50px;
+}
+
+.mail svg:hover {
+  color: #db0a0a;
+}
+
+.telegram svg {
+  width: 35px;
+  height: 35px;
+  color: #fff;
+  transition: all 0.3s;
+  margin-right: 50px;
+}
+
+.telegram svg:hover {
+  color: #0bb1f3;
+}
+
+.telephone svg {
+  width: 35px;
+  height: 35px;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.telephone svg:hover {
+  color: #0ba705;
 }
