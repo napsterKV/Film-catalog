@@ -4,10 +4,16 @@ import searchResultLayout from "../templates/searchResult.hbs";
 const MOVIE_API = "https://api.themoviedb.org/3/movie/";
 const refs = {
     searchForm: document.querySelector(".search-form"),
+    searchInput: document.querySelector(".search-form input[type=text]"),
     searchInput: document.querySelector(".search input"),
     searchResults: document.querySelector(".search-results"),
-    popularFilmList: document.querySelector(".popular-film-list")
+    popularFilmList: document.querySelector(".popular-film-list"),
 }
+
+refs.searchForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    window.location.href = `search.html?id=${refs.searchInput.value}`;
+})
 
 refs.searchInput.addEventListener("input", debounce(e => {
     if(e.target.value != ''){
