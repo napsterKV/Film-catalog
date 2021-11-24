@@ -8,13 +8,20 @@
     background-size: cover;
   }
 </style>
-<img src="https://image.tmdb.org/t/p/w400{{poster_path}}" alt="Poster">
-<div class="popular-film-rating">{{vote_average}} by <br>{{vote_count}} votes</div>
+<div class="poster"><img src="https://image.tmdb.org/t/p/w400{{poster_path}}" alt="Poster">
+  <div class="popular-film-rating">{{vote_average}} by <br>{{vote_count}} votes</div>
+</div>
 <div class="desc">
   <h2>{{title}}</h2>
   <h3>Release year: {{release_year}}</h3>
   <h3>Tagline: "<span class="tagline"><i>{{tagline}}</i></span>"</h3>
   <h3>Description:</h3>
   <p>{{overview}}</p>
+  <h3>Genres:</h3>
+  <ul class="genres-list">
+    {{#each genres}}
+    <li>{{name}}</li>
+    {{/each}}
+  </ul>
   <h4>Homepage: <a href="{{homepage}}">{{homepage}}</a></h4>
 </div>
