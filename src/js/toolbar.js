@@ -24,7 +24,6 @@ function setTheme(theme) {
 const checkbox = document.querySelector("#theme-switch-toggle");
 const body = document.querySelector("body");
 const interfaceObject =Array.from(document.querySelectorAll(".interface-object"));
-console.log(interfaceObject);
 
 let currentTheme = getTheme();
 if (currentTheme === Theme.DARK) {
@@ -39,8 +38,6 @@ if (currentTheme === Theme.DARK) {
 }else{
     interfaceObject.forEach(obj => obj.className = "interface-obj-light")
 }
-
-console.log(interfaceObject.entries());
 
 body.classList.add(currentTheme);
 

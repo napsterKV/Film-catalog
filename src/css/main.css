@@ -199,9 +199,14 @@ nav a {
 									/* SEARCH SECTION */
 
 
-section:nth-child(1) {
+.hello-section {
   margin-top: 66.4px;
   min-height: 350px;
+  background-image: url("https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces/jTiQAusGG4dVLSb1WHme9I9R4NN.jpg");
+  background-color: rgba(0, 0, 0, .80);
+  background-blend-mode: darken;
+  background-position: center;
+  background-size: cover;
 }
 
 .search-section-cont {
