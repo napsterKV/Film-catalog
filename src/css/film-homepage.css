@@ -103,6 +103,10 @@
   font-family: "Shippori Antique";
 }
 
+.similar-film-poster {
+  position: relative;
+}
+
 .similar-film img {
   border-radius: 20px;
   width: 100%;
@@ -118,13 +122,13 @@
 .similar-film-rating {
   position: absolute;
   color: white;
-  bottom: 0;
-  right: 0;
   width: 50px;
   height: 30px;
+  top: 87%;
+  left: 67%;
   text-align: center;
   line-height: 30px;
   border-bottom-right-radius: 18px;
   border-top-left-radius: 18px;
-  background: rgb(208, 146, 12);
+  background: rgb(208, 146, 12); 
 }
