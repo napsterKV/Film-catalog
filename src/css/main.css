@@ -320,8 +320,44 @@ footer {
   padding: 35px 0;
 }
 
-footer .container {
+.copyright {
   display: flex;
   text-align: center;
   justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.mail svg{
+  width: 35px;
+  height: 35px;
+  transition: all 0.3s;
+  color: #fff;
+  margin-right: 50px;
+}
+
+.mail svg:hover {
+  color: #db0a0a;
+}
+
+.telegram svg{
+  width: 35px;
+  height: 35px;
+  color: #fff;
+  transition: all 0.3s;
+  margin-right: 50px;
+}
+
+.telegram svg:hover {
+  color: #0bb1f3;
+}
+
+.telephone svg {
+  width: 35px;
+  height: 35px;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.telephone svg:hover {
+  color: #0ba705;
 }

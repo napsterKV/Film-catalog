@@ -23,7 +23,7 @@ function setTheme(theme) {
 
 const checkbox = document.querySelector("#theme-switch-toggle");
 const body = document.querySelector("body");
-const interfaceObject =Array.from(document.querySelectorAll("#interface-object"));
+const interfaceObject =Array.from(document.querySelectorAll(".interface-object"));
 console.log(interfaceObject);
 
 let currentTheme = getTheme();
