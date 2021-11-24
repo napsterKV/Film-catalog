@@ -1,29 +1,25 @@
 {
-  "name": "film-catalog",
-  "version": "1.0.0",
-  "description": "Film catalog",
-  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "name": "parcel-project-template",
+  "version": "1.1.0",
+  "description": "",
+  "main": "index.js",
+  "homepage": "https://goitacademy.github.io/parcel-project-template",
   "scripts": {
-    "dev": "del dist /Q /f /s && parcel src/*.html src/pages/**/*.html --no-cache",
-    "build": "del dist /Q /f /s && parcel build src/*.html src/pages/**/*.html --no-cache"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.4.0",
-    "parcel": "^2.0.0",
-    "postcss": "^8.3.11",
-    "posthtml-expressions": "^1.9.0",
-    "posthtml-include": "^1.7.2"
+    "dev": "node run-parcel.js",
+    "build": "parcel build src/*.html --public-url /parcel-project-template/"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Napster-YT/Film-catalog"
+    "url": "git+https://github.com/goitacademy/parcel-project-template.git"
   },
-  "author": "Bevzyk SOI",
+  "keywords": [],
+  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/goitacademy/parcel-project-template/issues"
   },
   "devDependencies": {
+    "express": "^4.17.1",
     "parcel-bundler": "^1.12.5",
     "parcel-plugin-handlebars-precompile": "^1.0.2",
     "parcel-plugin-nuke-dist": "^1.0.1",
@@ -31,6 +27,7 @@
     "sass": "^1.32.8"
   },
   "dependencies": {
+    "ha": "0.0.17",
     "jquery": "^3.6.0",
     "lodash.debounce": "^4.0.8"
   }

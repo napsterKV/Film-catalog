@@ -1,6 +1,9 @@
 {{#each .}}
-<div class="popular-film">
+<a href="/film.html?id={{id}}">
+  <div class="popular-film">
     <img src="https://image.tmdb.org/t/p/original/{{poster_path}}" alt="">
-    <div class="popular-film-title">{{title}}</div>
+    <div class="film-card-title popular-film-title">{{title}}</div>
+    <div class="popular-film-rating">{{vote_average}}</div>
 </div>
-{{/each}}
+</a>
+{{/each}} 
