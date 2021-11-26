@@ -12,7 +12,7 @@ const refs = {
 
 refs.searchForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    window.location.href = `search.html?id=${refs.searchInput.value}`;
+    window.location.href = `search.html?query=${refs.searchInput.value}`;
 })
 
 refs.searchInput.addEventListener("input", debounce(e => {

@@ -1,0 +1,12 @@
+{{#each .}}
+<a href="/film.html?id={{id}}">
+  <div class="desc">
+    <img src="https://www.themoviedb.org/t/p/w188_and_h282_bestv2/{{poster_path}}" alt="Poster">
+    <div class="name">
+      <h2 class="film-card-title">{{title}}</h2>
+      <h3>{{release_year}}</h3>
+      <p>{{overview}}</p>
+    </div>
+  </div>
+</a>
+{{/each}}
