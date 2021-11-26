@@ -1,0 +1,14 @@
+.search-res-section {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.desc {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    color: #000;
+}
