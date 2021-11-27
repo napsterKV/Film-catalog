@@ -1,11 +1,12 @@
 {{#each .}}
 <a href="/film.html?id={{id}}">
   <div class="desc">
-    <img src="https://www.themoviedb.org/t/p/w188_and_h282_bestv2/{{poster_path}}" alt="Poster">
+    <div class="poster {{posterClass}}">
+      <img src="{{poster_path}}" alt="Poster"></div>
     <div class="name">
       <h2 class="film-card-title">{{title}}</h2>
-      <h3>{{release_year}}</h3>
-      <p>{{overview}}</p>
+      <h3 class="film-card-title">{{release_year}}</h3>
+      <p class="film-card-title">{{overview}}</p>
     </div>
   </div>
 </a>

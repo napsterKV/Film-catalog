@@ -1,14 +1,51 @@
 .search-res-section {
-    margin-top: 100px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    margin-bottom: 100px;
+}
+
+.search-res-section a:not(:first-child) {
+    margin-top: 50px;
 }
 
 .desc {
     display: flex;
-    margin: 0 auto;
-    justify-content: center;
     color: #000;
+    border: 2px solid #000;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.poster {
+    margin-right: 50px;
+    width: 188px;
+    min-width: 188px;
+    height: 282px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dbdbdb;
+}
+
+.poster img {
+    width: auto;
+    display: block;
+}
+
+.noposter img {
+    width: 70%;
+}
+
+
+.name {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.request-title {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
 }
