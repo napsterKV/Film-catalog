@@ -274,7 +274,6 @@ nav a {
 /* NEW RELEASES */
 .popular-title {
   font-weight: 500;
-  color: rgb(88, 88, 88);
 }
 .popular-section {
   min-height: 100vh;
@@ -326,11 +325,12 @@ nav a {
 
 .popular-film-title {
   text-align: center;
-  color: rgb(121, 121, 121);
+  color: rgb(0, 0, 0);
   font-weight: 400;
 }
 
 footer {
+  padding: 0;
   text-align: center;
   color: #fff;
   padding: 35px 0;
