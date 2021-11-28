@@ -16,7 +16,6 @@ const refs = {
 fetch(`${MOVIE_API}search/movie?api_key=${API_KEY}&language=en-US&query=${title}&page=1`)
     .then(res => res.json())
     .then(result => {
-        console.log(result);
         refs.requestTitle.textContent = title;
         result.results.forEach(film => {
             if (!film.poster_path) {
