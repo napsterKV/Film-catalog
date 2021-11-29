@@ -230,7 +230,7 @@ nav a {
 }
 
 .search label input {
-  padding-left: 10px;
+  padding-left: 20px;
   width: 80%;
   font-weight: 600;
   color: rgb(109, 109, 109);
@@ -243,9 +243,18 @@ nav a {
 
 .search input[type='submit'] {
   font-weight: 600;
-  color: rgb(109, 109, 109);
+  color: #fffb1f;
+  width: 90px;
   height: 40px;
   border-radius: 50px;
+  margin-left: -94px;
+  border: none;
+  background: linear-gradient(90deg, rgba(32, 31, 255, 1) 25%, rgba(252, 70, 70, 1) 75%);
+}
+
+.search input[type='submit']:active {
+  transform: perspective(1px) scale(.85);
+  transition: transform 0.2s ease;
 }
 
 .search-results {
