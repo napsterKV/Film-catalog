@@ -41,6 +41,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    margin-right: 50px;
+}
+
+.name h2 {
+    font-weight: bold;
 }
 
 .request-title {
