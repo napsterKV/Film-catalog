@@ -23,7 +23,7 @@ function setTheme(theme) {
 
 const checkbox = document.querySelector("#theme-switch-toggle");
 const body = document.querySelector("body");
-const interfaceObject =Array.from(document.querySelectorAll(".interface-object"));
+const interfaceObject = Array.from(document.querySelectorAll(".interface-object"));
 
 let currentTheme = getTheme();
 if (currentTheme === Theme.DARK) {
@@ -31,10 +31,14 @@ if (currentTheme === Theme.DARK) {
     interfaceObject.forEach(obj => obj.className = "interface-obj-dark")
     setTimeout(() => {
         const filmCardTitle = document.querySelectorAll(".film-card-title");
+        const searchSectionCard = document.querySelectorAll(".search-res-section .desc");
         filmCardTitle.forEach(title => {
             title.style.color = 'white';
         })
-    }, 600)
+        searchSectionCard.forEach(card => {
+            card.style.borderColor = "white";
+        });
+    }, 200)
 }else{
     interfaceObject.forEach(obj => obj.className = "interface-obj-light")
 }
@@ -55,6 +59,7 @@ checkbox.addEventListener("change", event => {
         }
     });
     const filmCardTitle = document.querySelectorAll(".film-card-title");
+    const searchSectionCard = document.querySelectorAll(".search-res-section .desc");
     filmCardTitle.forEach(title => {
         if(currentTheme === Theme.DARK) {
             title.style.color = 'white';
@@ -62,6 +67,13 @@ checkbox.addEventListener("change", event => {
             title.style.color = 'black';
         }
     })
+    searchSectionCard.forEach(card => {
+        if(currentTheme === Theme.DARK) {
+            card.style.borderColor = 'white';
+        }else{
+            card.style.borderColor = 'black';
+        }
+    });
 },0)
 
 

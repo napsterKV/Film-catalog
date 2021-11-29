@@ -10,12 +10,6 @@
   align-items: flex-start;
 }
 
-.film-title img {
-  border-radius: 20px;
-  -webkit-box-shadow: 9px 10px 12px 3px #595959;
-  box-shadow: 9px 10px 12px 3px #595959;
-}
-
 .film-title h2 {
   font-size: 40px;
   padding-bottom: 20px;
@@ -61,13 +55,32 @@
 .poster {
   position: relative;
   margin-right: 100px;
+  border-radius: 20px;
+  -webkit-box-shadow: 9px 10px 12px 3px #595959;
+  box-shadow: 9px 10px 12px 3px #595959;
+}
+
+.poster img {
+  border-radius: 20px;
+}
+
+.noposter {
+  background-color: #dbdbdb;
+  min-width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.noposter img {
+  width: 300px;
 }
 
 .popular-film-rating {
   position: absolute;
   width: 150px;
   height: 100px;
-  bottom: 1%;
   font-size: 23px;
   display: flex;
   align-items: center;
