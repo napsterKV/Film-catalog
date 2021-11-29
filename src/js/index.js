@@ -8,6 +8,8 @@ const refs = {
     searchInput: document.querySelector(".search input"),
     searchResults: document.querySelector(".search-results"),
     popularFilmList: document.querySelector(".popular-film-list"),
+    latestFilmList: document.querySelector(".latest-film-list"),
+    topRatedFilmList: document.querySelector(".top_rated-film-list"),
 }
 
 refs.searchForm.addEventListener("submit", (event) => {
@@ -31,6 +33,14 @@ refs.searchInput.addEventListener("input", debounce(e => {
     };
 }, 500));
 
+fetch(`${MOVIE_API}upcoming?api_key=170b9b9397b0574b7d603cba918ea1f4&language=en-US`).then(res => res.json())
+.then(res => {
+    console.log(res);
+    let markup = ``;
+    markup += filmLayout(res.results);
+    refs.latestFilmList.insertAdjacentHTML("beforeend", markup)
+}); 
+
 
 fetch(`${MOVIE_API}popular?api_key=170b9b9397b0574b7d603cba918ea1f4&language=en-US`).then(res => res.json())
 .then(res => {
@@ -38,3 +48,11 @@ fetch(`${MOVIE_API}popular?api_key=170b9b9397b0574b7d603cba918ea1f4&language=en-
     markup += filmLayout(res.results);
     refs.popularFilmList.insertAdjacentHTML("beforeend", markup)
 }); 
+
+fetch(`${MOVIE_API}top_rated?api_key=170b9b9397b0574b7d603cba918ea1f4&language=en-US`).then(res => res.json())
+.then(res => {
+    let markup = ``;
+    markup += filmLayout(res.results);
+    refs.topRatedFilmList.insertAdjacentHTML("beforeend", markup)
+}); 
+
