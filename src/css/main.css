@@ -272,16 +272,20 @@ nav a {
 }
 
 /* NEW RELEASES */
-.popular-title {
-  font-weight: 500;
-}
-.popular-section {
-  min-height: 100vh;
-  margin-bottom: 30px;
+.list-section {
+  margin-bottom: 0px;
 }
 
-.popular-cont {
+.sect-cont {
   padding-top: 80px;
+}
+
+.sect-title h2{
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  text-align: left;
 }
 
 .film-list {
@@ -291,7 +295,7 @@ nav a {
   margin-bottom: 35px;
 }
 
-.popular-film {
+.film-card {
   display: flex;
   flex-direction: column;
   width: 150px;
@@ -301,7 +305,7 @@ nav a {
   font-family: 'Shippori Antique';
 }
 
-.popular-film img {
+.film-card img {
   border-radius: 20px;
   width: 100%;
   height: 100%;
@@ -309,7 +313,7 @@ nav a {
   margin-bottom: 10px;
 }
 
-.popular-film-rating {
+.film-rating {
   position: absolute;
   color: white;
   bottom: 0;
@@ -323,7 +327,7 @@ nav a {
   background: rgb(255, 174, 0);
 }
 
-.popular-film-title {
+.film-card-title {
   text-align: center;
   color: rgb(0, 0, 0);
   font-weight: 400;
