@@ -54,3 +54,28 @@
     margin-top: 100px;
     margin-bottom: 50px;
 }
+
+.page-changer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+};
+
+.page-list {
+    list-style: none;
+}
+
+.page-list-el {
+    display: inline-block;
+    width: 55px;
+    height: 45px;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 45px;
+    margin-right: 10px;
+}
+
+.page-list-el a {
+    text-decoration: none;
+    color: black;
+}
