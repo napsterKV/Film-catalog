@@ -14,6 +14,8 @@ const similarFilmsSection = document.querySelector(".similar-films-list");
 const params = new URLSearchParams(window.location.search);
 let id = params.get('id');
 
+sessionStorage.removeItem("page");
+
 fetch(`${MOVIE_API}${id}?api_key=${API_KEY}&language=en-US`)
   .then(res => res.json())
   .then(result => {

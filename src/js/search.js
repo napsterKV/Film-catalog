@@ -4,18 +4,29 @@ import searchResult from "../templates/search-result-page.hbs"
 
 const params = new URLSearchParams(window.location.search);
 let title = params.get('query');
-
 const MOVIE_API = "https://api.themoviedb.org/3/";
 const API_KEY = "170b9b9397b0574b7d603cba918ea1f4";
 
 const refs = {
     searchSection: document.querySelector(".search-res-section"),
-    requestTitle: document.querySelector(".request")
+    requestTitle: document.querySelector(".request"),
+    pageChanger: document.querySelector(".page-list"),
 }
 
-fetch(`${MOVIE_API}search/movie?api_key=${API_KEY}&language=en-US&query=${title}&page=1`)
+let page = 1;
+let pagesLimit = 8;
+refs.pageChanger.addEventListener("click", e => {
+   window.location.reload()
+   console.log(e.target);
+   page = e.target.getAttribute("data-page"); 
+   sessionStorage.setItem("page", JSON.stringify(page))
+});
+
+fetch(`${MOVIE_API}search/movie?api_key=${API_KEY}&language=en-US&query=${title}&page=${JSON.parse(sessionStorage.getItem("page"))}`)
     .then(res => res.json())
     .then(result => {
+        console.log(page);
+        console.log(result);
         refs.requestTitle.textContent = title;
         result.results.forEach(film => {
             if (!film.poster_path) {
@@ -34,5 +45,17 @@ fetch(`${MOVIE_API}search/movie?api_key=${API_KEY}&language=en-US&query=${title}
         });
         const markup = searchResult(result.results);
         refs.searchSection.innerHTML = markup;
+
+        if(result.total_pages < 8) {
+            pagesLimit = result.total_pages;
+            console.log(pagesLimit);
+        }
+
+        for(let i = 1; i <= pagesLimit; i++) {
+            const pageChangerEl = `<li class="page-list-el" data-page="${i}"><a href="#" data-page="${i}">${i}</a></li>`
+            refs.pageChanger.insertAdjacentHTML("beforeend", pageChangerEl);
+        }
     })
     .catch(error => console.error(error));
+
+    
