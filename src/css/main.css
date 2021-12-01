@@ -291,12 +291,29 @@ nav a {
   padding-top: 80px;
 }
 
+.sect-title {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .sect-title h2{
   font-weight: bold;
   font-size: 30px;
   margin-bottom: 30px;
   margin-left: 30px;
   text-align: left;
+}
+
+.sort-by {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sort-by h2 {
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 .latest-section i {
@@ -309,6 +326,15 @@ nav a {
 
 .top-rated-section i {
   color: #ffb11f;
+}
+
+.poster {
+  position: relative;
+}
+
+.noposter {
+  background-color: #dbdbdb;
+  border-radius: 20px;
 }
 
 .film-list {
@@ -324,7 +350,7 @@ nav a {
   width: 150px;
   position: relative;
   height: 220px;
-  margin: 20px 20px 80px;
+  margin: 20px 20px 120px;
   font-family: 'Shippori Antique';
 }
 
@@ -337,17 +363,17 @@ nav a {
 }
 
 .film-rating {
-  position: absolute;
-  color: white;
-  bottom: 0;
-  right: 0;
-  width: 50px;
-  height: 30px;
-  text-align: center;
-  line-height: 30px;
-  border-bottom-right-radius: 18px;
-  border-top-left-radius: 18px;
-  background: rgb(255, 174, 0);
+   position: absolute;
+   color: white;
+   width: 50px;
+   height: 30px;
+   bottom: 0;
+   right: 0;
+   text-align: center;
+   line-height: 30px;
+   border-bottom-right-radius: 18px;
+   border-top-left-radius: 18px;
+   background: rgb(208, 146, 12);
 }
 
 .film-card-title {

@@ -10,6 +10,7 @@ const refs = {
     popularFilmList: document.querySelector(".popular-film-list"),
     latestFilmList: document.querySelector(".latest-film-list"),
     topRatedFilmList: document.querySelector(".top_rated-film-list"),
+    upcomingFilmList: document.querySelector(".upcoming-film-list")
 }
 
 sessionStorage.removeItem("page");
@@ -37,7 +38,6 @@ refs.searchInput.addEventListener("input", debounce(e => {
 
 fetch(`${MOVIE_API}upcoming?api_key=170b9b9397b0574b7d603cba918ea1f4&language=en-US`).then(res => res.json())
 .then(res => {
-    console.log(res);
     let markup = ``;
     markup += filmLayout(res.results);
     refs.latestFilmList.insertAdjacentHTML("beforeend", markup)
@@ -56,5 +56,11 @@ fetch(`${MOVIE_API}top_rated?api_key=170b9b9397b0574b7d603cba918ea1f4&language=e
     let markup = ``;
     markup += filmLayout(res.results);
     refs.topRatedFilmList.insertAdjacentHTML("beforeend", markup)
-}); 
+});
 
+fetch(`${MOVIE_API}upcoming?api_key=170b9b9397b0574b7d603cba918ea1f4&language=en-US`).then(res => res.json())
+.then(res => {
+    let markup = ``;
+    markup += filmLayout(res.results);
+    refs.upcomingFilmList.insertAdjacentHTML("beforeend", markup)
+}); 
