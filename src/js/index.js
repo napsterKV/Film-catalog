@@ -37,7 +37,6 @@ refs.searchInput.addEventListener("input", debounce(e => {
 
 fetch(`${MOVIE_API}upcoming?api_key=170b9b9397b0574b7d603cba918ea1f4&language=en-US`).then(res => res.json())
 .then(res => {
-    console.log(res);
     let markup = ``;
     markup += filmLayout(res.results);
     refs.latestFilmList.insertAdjacentHTML("beforeend", markup)
