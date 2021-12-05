@@ -431,3 +431,23 @@ footer {
 .telephone svg:hover {
   color: #0ba705;
 }
+
+                              /* SORT */
+
+select {
+  width: 135px;
+  text-align: center;
+  height: 40px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.2s;
+  border: none;
+  border-radius: 15px;
+  background-color: #cf1717;
+  color: #fff;
+  padding-right: 2px;
+}
+
+select option {
+  transition: all 0.2s;
+}

@@ -43,10 +43,10 @@
       <div class="container">
         <div class="sect-cont">
           <div class="sect-title">
-            <h2 class="film-card-title"><i class="far fa-clock"></i> Latest</h2>
+            <h2 class="film-card-title"><i class="far fa-clock"></i> Now playing</h2>
             <div class="sort-by">
               <h2>Sort by:</h2>
-              <include src="./partials/sort.html"></include>
+              <include src="./partials/sort.html">{"source": "nowPlaying"}</include>
             </div>
           </div>
           <div class="film-list latest-film-list"></div>
@@ -60,7 +60,7 @@
             <h2 class="film-card-title"><i class="fas fa-fire-alt"></i> Popular</h2>
             <div class="sort-by">
               <h2>Sort by:</h2>
-              <include src="./partials/sort.html"></include>
+              <include src="./partials/sort.html">{"source": "popular"}</include>
             </div>
           </div>
           <div class="film-list popular-film-list"></div>
@@ -74,7 +74,7 @@
             <h2 class="film-card-title"><i class="fas fa-star"></i> Top Rated (All Time)</h2>
             <div class="sort-by">
               <h2>Sort by:</h2>
-              <include src="./partials/sort.html"></include>
+              <include src="./partials/sort.html">{"source": "topRated"}</include>
             </div>
           </div>
           <div class="film-list top_rated-film-list"></div>
@@ -88,7 +88,7 @@
             <h2 class="film-card-title"><i class="fas fa-star"></i> Upcoming</h2>
             <div class="sort-by">
               <h2>Sort by:</h2>
-              <include src="./partials/sort.html"></include>
+              <include src="./partials/sort.html">{"source": "upcoming"}</include>
             </div>
           </div>
           <div class="film-list upcoming-film-list"></div>
@@ -99,9 +99,8 @@
   </section>
   </main>
   <include src="./partials/footer.html"></include>
-  <script src="./js/index.js"></script>
   <script src="./js/toolbar.js"></script>
-  <script src="./js/sort.js"></script>
+  <script src="./js/sort.js" type="module"></script>
 </body>
 
 </html>
