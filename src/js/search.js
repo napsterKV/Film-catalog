@@ -6,18 +6,26 @@ const params = new URLSearchParams(window.location.search);
 let title = params.get('query');
 const MOVIE_API = "https://api.themoviedb.org/3/";
 const API_KEY = "170b9b9397b0574b7d603cba918ea1f4";
-
+let page = 1;
+let pagesLimit = 8;
 const refs = {
     searchSection: document.querySelector(".search-res-section"),
     requestTitle: document.querySelector(".request"),
     pageChanger: document.querySelector(".page-list"),
+    pageChangerEl: document.querySelector(".page-list").getElementsByTagName("li"), 
 }
 
-let page = 1;
-let pagesLimit = 8;
+setTimeout(() => {
+    const pageChangerArr = Array.from(refs.pageChangerEl);
+    pageChangerArr.find(item => {
+        if(item.getAttribute("data-page") === JSON.parse(sessionStorage.getItem("page"))) {
+            item.style.border = "1px solid #3355ff";
+        }
+    });
+}, 400)
+
 refs.pageChanger.addEventListener("click", e => {
-   window.location.reload()
-   console.log(e.target);
+   window.location.reload();
    page = e.target.getAttribute("data-page"); 
    sessionStorage.setItem("page", JSON.stringify(page))
 });
@@ -25,8 +33,6 @@ refs.pageChanger.addEventListener("click", e => {
 fetch(`${MOVIE_API}search/movie?api_key=${API_KEY}&language=en-US&query=${title}&page=${JSON.parse(sessionStorage.getItem("page"))}`)
     .then(res => res.json())
     .then(result => {
-        console.log(page);
-        console.log(result);
         refs.requestTitle.textContent = title;
         result.results.forEach(film => {
             if (!film.poster_path) {
