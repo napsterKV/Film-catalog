@@ -36,6 +36,17 @@
     width: 70%;
 }
 
+.search-title-sect{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 30px 0;
+}
+
+.sort-by {
+    margin-top: 70px;
+    text-align: center;
+}
 
 .name {
     display: flex;
