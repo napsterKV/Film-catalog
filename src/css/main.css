@@ -255,7 +255,7 @@ nav a {
 }
 
 .search input[type='submit']:active {
-  transform: perspective(1px) scale(.85);
+  transform: perspective(1px) scale(0.85);
   transition: transform 0.2s ease;
 }
 
@@ -291,7 +291,7 @@ nav a {
   padding-top: 80px;
 }
 
-.sect-title h2{
+.sect-title h2 {
   font-weight: bold;
   font-size: 30px;
   margin-bottom: 30px;
