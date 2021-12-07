@@ -76,15 +76,29 @@
 .noposter img {
   width: 300px;
 }
+
+.film-cast {
+  margin-top: 50px;
+}
+
 .Section-title {
   text-align: center;
   font-size: 35px;
   margin: 30px 0;
 }
+
 .film-cast-cont {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 35px;
+}
+
+.film-card-title h4{
+  font-weight: normal;
+}
+
+.name-actor {
+  margin-bottom: 10px;
 }
 
 .film-card {

@@ -49,9 +49,7 @@ fetch(
     if (result.cast) {
       result.cast.length = 15;
     }
-    console.log(result.cast);
     const crewMarkup = filmCrew(result.cast);
-    console.log(crewMarkup);
     filmCastSection.innerHTML = crewMarkup;
   })
   .catch(error => console.error(error));
