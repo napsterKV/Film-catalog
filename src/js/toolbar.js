@@ -48,7 +48,7 @@ if (currentTheme === Theme.DARK) {
             }
             
         });
-    }, 400)
+    }, 600)
 }else{
     interfaceObject.forEach(obj => obj.className = "interface-obj-light")
 }
