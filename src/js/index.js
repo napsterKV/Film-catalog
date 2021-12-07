@@ -14,6 +14,8 @@ const refs = {
 
 sessionStorage.removeItem("page");
 
+
+
 refs.searchForm.addEventListener("submit", (event) => {
     event.preventDefault();
     window.location.href = `search.html?query=${refs.searchInput.value}`;

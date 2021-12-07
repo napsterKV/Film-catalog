@@ -40,8 +40,13 @@ if (currentTheme === Theme.DARK) {
             card.style.borderColor = "white";
         });
         pageList.forEach(item => {
-            item.style.borderColor = "white";
-            item.children[0].style.color = "white";
+            if(item.classList.contains('active')) {
+                item.children[0].style.color = "white";
+            }else{
+                item.style.borderColor = "white";
+                item.children[0].style.color = "white";
+            }
+            
         });
     }, 400)
 }else{
@@ -81,14 +86,20 @@ checkbox.addEventListener("change", event => {
         }
     });
     pageList.forEach(item => {
-        if(currentTheme === Theme.DARK) {
-            item.style.borderColor = 'white';
-            item.children[0].style.color = "white";
+            if(currentTheme === Theme.DARK && !item.classList.contains('active')) {
+                item.style.borderColor = 'white';
+                item.children[0].style.color = "white";
+    
+            }else if(currentTheme === Theme.DARK && item.classList.contains('active')) {
+                item.children[0].style.color = "white";
 
-        }else{
-            item.style.borderColor = 'black';
-            item.children[0].style.color = "black";
-        }
+            }else if(currentTheme === Theme.LIGHT && !item.classList.contains('active')){
+                item.style.borderColor = 'black';
+                item.children[0].style.color = "black";
+            }else if (currentTheme === Theme.LIGHT && item.classList.contains('active')) {
+                item.children[0].style.color = "black";
+            }
+            
     });
 })
 

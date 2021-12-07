@@ -64,7 +64,7 @@
     display: inline-block;
     width: 55px;
     height: 45px;
-    border: 1px solid black;
+    border: 1px solid;
     border-radius: 10px;
     text-align: center;
     line-height: 45px;
