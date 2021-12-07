@@ -1,11 +1,11 @@
 .search-res-section {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
 }
 
 .search-res-section a:not(:first-child) {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 .desc {
@@ -17,23 +17,23 @@
 }
 
 .poster {
-    margin-right: 50px;
-    width: 188px;
-    min-width: 188px;
-    height: 282px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #dbdbdb;
+  margin-right: 50px;
+  width: 188px;
+  min-width: 188px;
+  height: 282px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dbdbdb;
 }
 
 .poster img {
-    width: auto;
-    display: block;
+  width: auto;
+  display: block;
 }
 
 .noposter img {
-    width: 70%;
+  width: 70%;
 }
 
 .search-title-sect{
@@ -84,27 +84,37 @@
 }
 
 .page-changer {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
-};
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
 
 .page-list {
-    list-style: none;
+  list-style: none;
 }
 
 .page-list-el {
-    display: inline-block;
-    width: 55px;
-    height: 45px;
-    border: 1px solid black;
-    border-radius: 10px;
-    text-align: center;
-    line-height: 45px;
-    margin-right: 10px;
+  display: inline-block;
+  width: 55px;
+  height: 45px;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 45px;
+  margin-right: 10px;
 }
 
 .page-list-el a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
+}
+
+/* адаптив */
+
+@media screen and (min-width: 320px) and (max-width: 480) {
+  .navbar {
+    max-width: 280px;
+  }
+  .result {
+  }
 }
