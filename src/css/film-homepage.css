@@ -106,6 +106,24 @@
   flex-direction: column;
 }
 
+.poster-cast {
+  height: 100%;
+  position: relative;
+}
+
+.noposter-cast {
+  background-color: #dbdbdb;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 220px;
+}
+
+.noposter-cast img{
+  height: 50%;
+}
+
 .noposter .popular-film-rating {
   top: 75%;
 }

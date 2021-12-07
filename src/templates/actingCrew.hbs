@@ -1,11 +1,12 @@
 {{#each .}}
 
 <div class="film-card">
-  <img src="https://image.tmdb.org/t/p/original/{{profile_path}}" alt="Person">
+  <div class="poster-cast {{posterClass}}">
+    <img src="{{profile_path}}" alt="Person">
+  </div>
   <div class="film-card-title">
     <h4 class="name-actor"><b>{{name}}</b></h4>
     <h4>{{character}}</h4>
   </div>
-
 </div>
 {{/each}}
