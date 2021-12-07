@@ -94,6 +94,14 @@
 }
 
 .page-list-el {
+    display: inline-block;
+    width: 55px;
+    height: 45px;
+    border: 1px solid;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 45px;
+    margin-right: 10px;
   display: inline-block;
   width: 55px;
   height: 45px;

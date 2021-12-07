@@ -9,6 +9,7 @@ let title = params.get('query');
 const MOVIE_API = "https://api.themoviedb.org/3/";
 const API_KEY = "170b9b9397b0574b7d603cba918ea1f4";
 let page = 1;
+
 let pagesLimit = 8;
 const refs = {
     searchSection: document.querySelector(".search-res-section"),
@@ -17,14 +18,27 @@ const refs = {
     pageChangerEl: document.querySelector(".page-list").getElementsByTagName("li"),
     sortCont: document.querySelector("#sort")
 }
+setTimeout(() => {
+    if(sessionStorage.length === 0) {
+        const pageChangerArr = Array.from(refs.pageChangerEl);
+        pageChangerArr[0].classList.add("active");
+        pageChangerArr[0].style.border = "1px solid #3355ff";
+
+    }
+}, 300);
+
 
 setTimeout(() => {
+    
     const pageChangerArr = Array.from(refs.pageChangerEl);
     pageChangerArr.find(item => {
         if(item.getAttribute("data-page") === JSON.parse(sessionStorage.getItem("page"))) {
+            item.classList.add("active");
             item.style.border = "1px solid #3355ff";
         }
     });
+
+    
 }, 400)
 
 refs.pageChanger.addEventListener("click", e => {
