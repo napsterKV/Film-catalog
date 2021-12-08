@@ -31,7 +31,7 @@ fetch(`${MOVIE_API}${id}?api_key=${API_KEY}&language=en-US`)
     }
 
     if (!result.release_date) {
-      result.release_year = 'NB';
+      result.release_year = 'NRY';
     } else {
       result.release_year = new Date(result.release_date).getFullYear();
     }
@@ -42,16 +42,23 @@ fetch(`${MOVIE_API}${id}?api_key=${API_KEY}&language=en-US`)
   .catch(error => console.error(error));
 
 fetch(
-  `https://api.themoviedb.org/3//movie/${id}/credits?api_key=170b9b9397b0574b7d603cba918ea1f4&language=en-US&query=hello&page=4&include_adult=false`,
-)
+    `https://api.themoviedb.org/3//movie/${id}/credits?api_key=170b9b9397b0574b7d603cba918ea1f4&language=en-US&query=hello&page=4&include_adult=false`,
+  )
   .then(res => res.json())
   .then(result => {
     if (result.cast) {
       result.cast.length = 15;
     }
-    console.log(result.cast);
+    result.cast.forEach(actor => {
+      if (!actor.profile_path) {
+        actor.profile_path = "https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-4-user-grey-d8fe957375e70239d6abdd549fd7568c89281b2179b5f4470e2e12895792dfa5.svg";
+        actor.posterClass = "noposter-cast";
+      } else {
+        actor.profile_path = `https://www.themoviedb.org/t/p/original${actor.profile_path}`;
+        actor.posterClass = "";
+      }
+    });
     const crewMarkup = filmCrew(result.cast);
-    console.log(crewMarkup);
     filmCastSection.innerHTML = crewMarkup;
   })
   .catch(error => console.error(error));

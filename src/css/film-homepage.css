@@ -76,20 +76,54 @@
 .noposter img {
   width: 300px;
 }
+
+.film-cast {
+  margin-top: 50px;
+}
+
 .Section-title {
   text-align: center;
   font-size: 35px;
   margin: 30px 0;
 }
+
 .film-cast-cont {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 35px;
 }
 
+.film-card-title h4{
+  font-weight: normal;
+}
+
+.name-actor {
+  margin: 10px 0;
+}
+
 .film-card {
   display: flex;
   flex-direction: column;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.poster-cast {
+  height: 100%;
+  position: relative;
+}
+
+.noposter-cast {
+  background-color: #dbdbdb;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 220px;
+}
+
+.noposter-cast img{
+  height: 50%;
 }
 
 .noposter .popular-film-rating {
