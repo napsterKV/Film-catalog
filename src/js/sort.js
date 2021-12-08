@@ -56,6 +56,14 @@ refs.sortCont.forEach(sort => {
         break;
     }
     const markup = filmLayout(results);
+
     filmList.insertAdjacentHTML("beforeend", markup);
+    if(document.querySelector("body").classList.contains("dark-theme")) {
+      Array.from(document.querySelectorAll(".film-card-title")).forEach(el => {
+        el.style.color = "white"; 
+      })
+    }
+    
+
   });
 })
