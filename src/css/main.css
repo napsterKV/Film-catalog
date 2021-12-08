@@ -296,7 +296,7 @@ nav a {
   align-items: center;
 }
 
-.sect-title h2{
+.sect-title h2 {
   font-weight: bold;
   font-size: 30px;
   margin-bottom: 30px;
@@ -362,17 +362,17 @@ nav a {
 }
 
 .film-rating {
-   position: absolute;
-   color: white;
-   width: 50px;
-   height: 30px;
-   bottom: 0;
-   right: 0;
-   text-align: center;
-   line-height: 30px;
-   border-bottom-right-radius: 18px;
-   border-top-left-radius: 18px;
-   background: rgb(208, 146, 12);
+  position: absolute;
+  color: white;
+  width: 50px;
+  height: 30px;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  line-height: 30px;
+  border-bottom-right-radius: 18px;
+  border-top-left-radius: 18px;
+  background: rgb(208, 146, 12);
 }
 
 .film-card-title {
@@ -432,7 +432,7 @@ footer {
   color: #0ba705;
 }
 
-                              /* SORT */
+/* SORT */
 
 select {
   width: 135px;
