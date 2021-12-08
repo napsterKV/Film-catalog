@@ -9,11 +9,11 @@
 }
 
 .desc {
-  display: flex;
-  color: #000;
-  border: 1px solid #000;
-  border-radius: 20px;
-  overflow: hidden;
+    display: flex;
+    color: #000;
+    border: 2px solid #000;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .poster {
@@ -37,9 +37,14 @@
 }
 
 .name {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-right: 50px;
+}
+
+.name h2 {
+    font-weight: bold;
 }
 
 .request-title {
@@ -60,14 +65,14 @@
 }
 
 .page-list-el {
-  display: inline-block;
-  width: 55px;
-  height: 45px;
-  border: 1px solid black;
-  border-radius: 10px;
-  text-align: center;
-  line-height: 45px;
-  margin-right: 10px;
+    display: inline-block;
+    width: 55px;
+    height: 45px;
+    border: 1px solid;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 45px;
+    margin-right: 10px;
 }
 
 .page-list-el a {

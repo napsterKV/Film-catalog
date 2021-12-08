@@ -32,13 +32,23 @@ if (currentTheme === Theme.DARK) {
     setTimeout(() => {
         const filmCardTitle = document.querySelectorAll(".film-card-title");
         const searchSectionCard = document.querySelectorAll(".search-res-section .desc");
+        const pageList = document.querySelectorAll(".page-list-el");
         filmCardTitle.forEach(title => {
             title.style.color = 'white';
         })
         searchSectionCard.forEach(card => {
             card.style.borderColor = "white";
         });
-    }, 200)
+        pageList.forEach(item => {
+            if(item.classList.contains('active')) {
+                item.children[0].style.color = "white";
+            }else{
+                item.style.borderColor = "white";
+                item.children[0].style.color = "white";
+            }
+            
+        });
+    }, 600)
 }else{
     interfaceObject.forEach(obj => obj.className = "interface-obj-light")
 }
@@ -60,6 +70,7 @@ checkbox.addEventListener("change", event => {
     });
     const filmCardTitle = document.querySelectorAll(".film-card-title");
     const searchSectionCard = document.querySelectorAll(".search-res-section .desc");
+    const pageList = document.querySelectorAll(".page-list-el");
     filmCardTitle.forEach(title => {
         if(currentTheme === Theme.DARK) {
             title.style.color = 'white';
@@ -74,6 +85,22 @@ checkbox.addEventListener("change", event => {
             card.style.borderColor = 'black';
         }
     });
-},0)
+    pageList.forEach(item => {
+            if(currentTheme === Theme.DARK && !item.classList.contains('active')) {
+                item.style.borderColor = 'white';
+                item.children[0].style.color = "white";
+    
+            }else if(currentTheme === Theme.DARK && item.classList.contains('active')) {
+                item.children[0].style.color = "white";
+
+            }else if(currentTheme === Theme.LIGHT && !item.classList.contains('active')){
+                item.style.borderColor = 'black';
+                item.children[0].style.color = "black";
+            }else if (currentTheme === Theme.LIGHT && item.classList.contains('active')) {
+                item.children[0].style.color = "black";
+            }
+            
+    });
+})
 
 

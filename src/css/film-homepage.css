@@ -92,14 +92,25 @@
   flex-direction: column;
 }
 
+.noposter .popular-film-rating {
+  top: 75%;
+}
+
 .film-rating {
   position: absolute;
   width: 150px;
   height: 100px;
+  bottom: 50px;
+  left: 62.5%;
+  top: 83.5%;
   font-size: 23px;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  border-bottom-right-radius: 18px;
+  border-top-left-radius: 18px;
+  background-color: rgb(255, 174, 0);
 }
 
 .section-title {
