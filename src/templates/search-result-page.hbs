@@ -1,0 +1,13 @@
+{{#each .}}
+<a href="/film.html?id={{id}}">
+  <div class="desc">
+    <div class="poster {{posterClass}}">
+      <img src="{{poster_path}}" alt="Poster"></div>
+    <div class="name">
+      <h2 class="film-card-title">{{title}}</h2>
+      <h3 class="film-card-title">{{release_year}}</h3>
+      <p class="film-card-title">{{overview}}</p>
+    </div>
+  </div>
+</a>
+{{/each}}

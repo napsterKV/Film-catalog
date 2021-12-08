@@ -1,0 +1,126 @@
+.search-res-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+
+.search-res-section a:not(:first-child) {
+  margin-top: 50px;
+}
+
+.desc {
+    display: flex;
+    color: #000;
+    border: 2px solid #000;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.poster {
+  margin-right: 50px;
+  width: 188px;
+  min-width: 188px;
+  height: 282px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dbdbdb;
+}
+
+.poster img {
+  width: auto;
+  display: block;
+}
+
+.noposter img {
+  width: 70%;
+}
+
+.search-title-sect{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 30px 0;
+}
+
+.filter-by {
+    text-align: center;
+    margin-top: 70px;
+    width: 220px;
+}
+
+#filter {
+    width: 180px;
+    height: 100px;
+    margin-top: 30px;
+}
+
+.filter-by p {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.sort-by {
+    margin-top: 70px;
+    text-align: center;
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-right: 50px;
+}
+
+.name h2 {
+    font-weight: bold;
+}
+
+.request-title {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    width: 180px;
+}
+
+.page-changer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.page-list {
+  list-style: none;
+}
+
+.page-list-el {
+    display: inline-block;
+    width: 55px;
+    height: 45px;
+    border: 1px solid;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 45px;
+    margin-right: 10px;
+  display: inline-block;
+  width: 55px;
+  height: 45px;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 45px;
+  margin-right: 10px;
+}
+
+.page-list-el a {
+  text-decoration: none;
+  color: black;
+}
+
+/* адаптив */
+
+@media screen and (min-width: 320px) and (max-width: 480) {
+  .navbar {
+    max-width: 280px;
+  }
+}

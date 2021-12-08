@@ -52,7 +52,7 @@ nav a {
 
 .nav-list {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   list-style: none;
   gap: 2rem;
@@ -61,7 +61,6 @@ nav a {
 .nav-logo {
   font-size: 2.5rem;
   font-family: 'Montserrat', sans-serif;
-  margin-right: auto;
   color: rgb(223, 223, 223);
 }
 
@@ -230,7 +229,7 @@ nav a {
 }
 
 .search label input {
-  padding-left: 10px;
+  padding-left: 20px;
   width: 80%;
   font-weight: 600;
   color: rgb(109, 109, 109);
@@ -243,9 +242,20 @@ nav a {
 
 .search input[type='submit'] {
   font-weight: 600;
-  color: rgb(109, 109, 109);
+  position: absolute;
+  color: #ffffff;
+  width: 90px;
   height: 40px;
   border-radius: 50px;
+  margin-left: -89px;
+  border: none;
+  background-color: #7f53ac;
+  background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
+}
+
+.search input[type='submit']:active {
+  transform: perspective(1px) scale(0.85);
+  transition: transform 0.2s ease;
 }
 
 .search-results {
@@ -272,17 +282,58 @@ nav a {
 }
 
 /* NEW RELEASES */
-.popular-title {
-  font-weight: 500;
-  color: rgb(88, 88, 88);
-}
-.popular-section {
-  min-height: 100vh;
-  margin-bottom: 30px;
+.list-section {
+  margin-bottom: 0px;
 }
 
-.popular-cont {
+.sect-cont {
   padding-top: 80px;
+}
+
+.sect-title {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.sect-title h2{
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  text-align: left;
+}
+
+.sort-by {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sort-by h2 {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.latest-section i {
+  color: #1f8fff;
+}
+
+.popular-section i {
+  color: #ff1f6a;
+}
+
+.top-rated-section i {
+  color: #ffb11f;
+}
+
+.poster {
+  position: relative;
+}
+
+.noposter {
+  background-color: #dbdbdb;
+  border-radius: 20px;
 }
 
 .film-list {
@@ -292,17 +343,17 @@ nav a {
   margin-bottom: 35px;
 }
 
-.popular-film {
+.film-card {
   display: flex;
   flex-direction: column;
   width: 150px;
   position: relative;
   height: 220px;
-  margin: 20px 20px 60px;
+  margin: 20px 20px 120px;
   font-family: 'Shippori Antique';
 }
 
-.popular-film img {
+.film-card img {
   border-radius: 20px;
   width: 100%;
   height: 100%;
@@ -310,27 +361,29 @@ nav a {
   margin-bottom: 10px;
 }
 
-.popular-film-rating {
-  position: absolute;
-  color: white;
-  bottom: 0;
-  right: 0;
-  width: 50px;
-  height: 30px;
-  text-align: center;
-  line-height: 30px;
-  border-bottom-right-radius: 18px;
-  border-top-left-radius: 18px;
-  background: rgb(255, 174, 0);
+.film-rating {
+   position: absolute;
+   color: white;
+   width: 50px;
+   height: 30px;
+   bottom: 0;
+   right: 0;
+   text-align: center;
+   line-height: 30px;
+   border-bottom-right-radius: 18px;
+   border-top-left-radius: 18px;
+   background: rgb(208, 146, 12);
 }
 
-.popular-film-title {
+.film-card-title {
   text-align: center;
-  color: rgb(121, 121, 121);
+  color: rgb(0, 0, 0);
   font-weight: 400;
+  margin-top: 10px;
 }
 
 footer {
+  padding: 0;
   text-align: center;
   color: #fff;
   padding: 35px 0;
@@ -377,4 +430,24 @@ footer {
 
 .telephone svg:hover {
   color: #0ba705;
+}
+
+                              /* SORT */
+
+select {
+  width: 135px;
+  text-align: center;
+  height: 40px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.2s;
+  border: none;
+  border-radius: 15px;
+  background-color: #cf1717;
+  color: #fff;
+  padding-right: 2px;
+}
+
+select option {
+  transition: all 0.2s;
 }
