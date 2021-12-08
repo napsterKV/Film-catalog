@@ -32,6 +32,7 @@ if (currentTheme === Theme.DARK) {
     setTimeout(() => {
         const filmCardTitle = document.querySelectorAll(".film-card-title");
         const searchSectionCard = document.querySelectorAll(".search-res-section .desc");
+        const castList = document.querySelectorAll(".cast-list");
         const pageList = document.querySelectorAll(".page-list-el");
         filmCardTitle.forEach(title => {
             title.style.color = 'white';
@@ -47,6 +48,9 @@ if (currentTheme === Theme.DARK) {
                 item.children[0].style.color = "white";
             }
             
+        });
+        castList.forEach(cast => {
+            cast.style.borderColor = "white";
         });
     }, 600)
 }else{
