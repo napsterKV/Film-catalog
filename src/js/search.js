@@ -62,7 +62,7 @@ fetch(`${MOVIE_API}search/movie?api_key=${API_KEY}&language=en-US&query=${title}
             }
 
             if (!film.release_date) {
-                film.release_year = "NB";
+                film.release_year = "NYR";
             } else {
                 film.release_year = new Date(film.release_date).getFullYear();
             }
