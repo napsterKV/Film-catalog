@@ -47,6 +47,9 @@ nav {
 }
 
 nav a {
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
   color: rgb(223, 223, 223);
 }
 
@@ -206,7 +209,6 @@ nav a {
 /* SEARCH SECTION */
 
 .hello-section {
-  margin-top: 66.4px;
   min-height: 350px;
   background-image: url('https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces/jTiQAusGG4dVLSb1WHme9I9R4NN.jpg');
   background-color: rgba(0, 0, 0, 0.8);
@@ -334,7 +336,7 @@ nav a {
   color: #ffb11f;
 }
 
-.upcoming-section i{
+.upcoming-section i {
   color: #15a011;
 }
 
@@ -564,5 +566,9 @@ select option {
 
   .copyright h2 {
     font-size: 18px;
+  }
+
+  .copyright h2:nth-child(2) {
+    margin-right: 10px;
   }
 }
