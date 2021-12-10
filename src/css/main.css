@@ -120,32 +120,6 @@ nav a {
   background: rgba(35, 201, 247, 0.564);
 }
 
-@media screen and (min-width: 360px) and (max-width: 480px) {
-  nav {
-    border-bottom: 0;
-  }
-  nav ul {
-    display: none;
-    height: auto;
-  }
-  nav a#pull {
-    display: block;
-    width: 100%;
-    position: relative;
-  }
-
-  nav a#pull::after {
-    content: '';
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-    position: absolute;
-  }
-  .theme-switch__icon {
-    margin-right: 3px;
-  }
-}
-
 /* TOOLBAR */
 .light-theme {
   background: #fafafa;
@@ -235,7 +209,6 @@ nav a {
 /* SEARCH SECTION */
 
 .hello-section {
-  margin-top: 66.4px;
   min-height: 350px;
   background-image: url('https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces/jTiQAusGG4dVLSb1WHme9I9R4NN.jpg');
   background-color: rgba(0, 0, 0, 0.8);
@@ -363,7 +336,7 @@ nav a {
   color: #ffb11f;
 }
 
-.upcoming-section i{
+.upcoming-section i {
   color: #15a011;
 }
 
