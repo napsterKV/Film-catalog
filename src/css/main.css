@@ -451,3 +451,9 @@ select {
 select option {
   transition: all 0.2s;
 }
+
+@media screen and (min-width: 1024px) {
+  .search-section-cont {
+    justify-content: center;
+  }
+}
