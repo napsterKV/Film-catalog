@@ -30,7 +30,7 @@ body {
 
 nav {
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   width: 100%;
   font-family: 'Poppins', sans-serif;
@@ -268,9 +268,9 @@ nav a {
 .search-results {
   z-index: 1;
   position: absolute;
+  width: 80%;
   background: #fafafa;
   list-style: none;
-  width: 80%;
   border-left: solid 2px grey;
   border-right: solid 2px grey;
   color: black;
@@ -479,6 +479,12 @@ select option {
   .search {
     text-align: center;
   }
+
+  .search-results {
+    left: 50%;
+    transform: translatex(-50%);
+  }
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -496,6 +502,11 @@ select option {
 
   .search {
     text-align: center;
+  }
+
+  .search-results {
+    left: 50%;
+    transform: translatex(-50%);
   }
 
   .copyright h2 {
@@ -525,6 +536,11 @@ select option {
 
   .search {
     text-align: center;
+  }
+
+  .search-results {
+    left: 50%;
+    transform: translatex(-50%);
   }
 
   .sect-title {
