@@ -95,7 +95,12 @@ function applyTheme() {
     }
   });
   castList.forEach(cast => {
-    cast.style.borderColor = "white";
+    if (currentTheme === Theme.DARK) {
+      cast.style.borderColor = "white";
+    } else {
+      cast.style.borderColor = "black";
+    }
+    
   });
   pageList.forEach(item => {
     if (currentTheme === Theme.DARK && !item.classList.contains('active')) {
