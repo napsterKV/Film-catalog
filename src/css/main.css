@@ -549,4 +549,8 @@ select option {
   .copyright h2 {
     font-size: 18px;
   }
+
+  .copyright h2:nth-child(2) {
+    margin-right: 10px;
+  }
 }
