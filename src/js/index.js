@@ -42,6 +42,11 @@ refs.searchInput.addEventListener("input", debounce(e => {
 function applyMarkup(results, element) {
   const markup = filmLayout(results);
   element.insertAdjacentHTML("beforeend", markup);
+  if(document.querySelector("body").classList.contains("dark-theme")) {
+    Array.from(document.querySelectorAll(".film-card-title")).forEach(el => {
+      el.style.color = "white"; 
+    })
+  }
 }
 
 function fetchData(url, element) {
