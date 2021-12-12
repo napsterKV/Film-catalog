@@ -1,21 +1,9 @@
 'use strict'
 
 import filmLayout from "../templates/film.hbs";
-import {
-  getResults
-} from "./index.js";
 
-const refs = {
-  sortCont: document.querySelectorAll("#sort")
-};
-
-refs.sortCont.forEach(sort => {
-  sort.addEventListener("change", event => {
-    const dataSource = sort.dataset.source;
-    let results = getResults(dataSource);
-    const filmList = event.target.parentNode.parentNode.nextElementSibling;
-    filmList.innerHTML = '';
-    switch (event.target.value) {
+export function sort(results, sortValue) {
+    switch (sortValue) {
       case "popularity.desc":
         results = results.sort((a, b) => {
           return b.popularity - a.popularity;
@@ -55,15 +43,13 @@ refs.sortCont.forEach(sort => {
       default:
         break;
     }
-    const markup = filmLayout(results);
 
-    filmList.insertAdjacentHTML("beforeend", markup);
-    if(document.querySelector("body").classList.contains("dark-theme")) {
-      Array.from(document.querySelectorAll(".film-card-title")).forEach(el => {
-        el.style.color = "white"; 
-      })
-    }
-    
+    return results;
+}
 
-  });
-})
+// if(document.querySelector("body").classList.contains("dark-theme")) {
+//   Array.from(document.querySelectorAll(".film-card-title")).forEach(el => {
+//     el.style.color = "white"; 
+//   })
+// }
+
