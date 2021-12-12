@@ -118,8 +118,49 @@
 
 /* адаптив */
 
-@media screen and (min-width: 320px) and (max-width: 480) {
+@media screen and (min-width: 320px) and (max-width: 479px) {
   .navbar {
     max-width: 280px;
+  }
+
+  .search-title-sect {
+    padding-top: 140px;
+  }
+
+  .filter-by h2 {
+    font-size: 15px;
+  }
+
+  .sort-by h2 {
+    font-size: 15px;
+  }
+
+  .desc {
+    margin: 0 20px;
+  }
+
+  .request-title {
+    font-size: 15px;
+  }
+
+  .name {
+    font-size: 10px;
+  }
+
+  .name p {
+    display: none;
+  }
+
+  .footer {
+    padding: 0;
+    margin: 0;
+  }
+
+
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .desc {
+    margin: 0 20px;
   }
 }
