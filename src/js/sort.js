@@ -47,9 +47,4 @@ export function sort(results, sortValue) {
     return results;
 }
 
-// if(document.querySelector("body").classList.contains("dark-theme")) {
-//   Array.from(document.querySelectorAll(".film-card-title")).forEach(el => {
-//     el.style.color = "white"; 
-//   })
-// }
 
