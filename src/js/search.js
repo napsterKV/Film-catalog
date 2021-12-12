@@ -1,8 +1,18 @@
 'use strict'
 
 import searchResult from "../templates/search-result-page.hbs";
+import {
+  sort
+} from "./sort.js";
+import {
+  filter
+} from "./filter.js";
+import {
+  applyTheme
+} from "./toolbar.js";
 
 let results;
+let originalResults;
 
 const params = new URLSearchParams(window.location.search);
 let title = params.get('query');
@@ -16,7 +26,8 @@ const refs = {
   requestTitle: document.querySelector(".request"),
   pageChanger: document.querySelector(".page-list"),
   pageChangerEl: document.querySelector(".page-list").getElementsByTagName("li"),
-  sortCont: document.querySelector("#sort")
+  sortCont: document.querySelector("#sort"),
+  filterEl: document.querySelector("#filter")
 }
 setTimeout(() => {
   if (sessionStorage.length === 0) {
@@ -44,28 +55,31 @@ refs.pageChanger.addEventListener("click", e => {
   sessionStorage.setItem("page", JSON.stringify(page))
 });
 
+function modifyFilm(film) {
+  if (!film.poster_path) {
+    film.poster_path = "https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg";
+    film.posterClass = "noposter";
+  } else {
+    film.poster_path = `https://www.themoviedb.org/t/p/w188_and_h282_bestv2${film.poster_path}`;
+    film.posterClass = "";
+  }
+
+  if (!film.release_date) {
+    film.release_year = "NRY";
+  } else {
+    film.release_year = new Date(film.release_date).getFullYear();
+  }
+}
+
 fetch(`${MOVIE_API}search/movie?api_key=${API_KEY}&language=en-US&query=${title}&page=${JSON.parse(sessionStorage.getItem("page"))}`)
   .then(res => res.json())
   .then(result => {
     refs.requestTitle.textContent = title;
-    results = result.results;
-    results.forEach(film => {
-      if (!film.poster_path) {
-        film.poster_path = "https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg";
-        film.posterClass = "noposter";
-      } else {
-        film.poster_path = `https://www.themoviedb.org/t/p/w188_and_h282_bestv2${film.poster_path}`;
-        film.posterClass = "";
-      }
+    originalResults = result.results;
+    results = originalResults;
+    results.forEach(film => modifyFilm(film));
 
-      if (!film.release_date) {
-        film.release_year = "NRY";
-      } else {
-        film.release_year = new Date(film.release_date).getFullYear();
-      }
-    });
-    const markup = searchResult(results);
-    refs.searchSection.innerHTML = markup;
+    applyMarkup(results);
 
     if (result.total_pages < 8) {
       pagesLimit = result.total_pages;
@@ -79,53 +93,21 @@ fetch(`${MOVIE_API}search/movie?api_key=${API_KEY}&language=en-US&query=${title}
   .catch(error => console.error(error));
 
 
-refs.sortCont.addEventListener("change", event => {
-  const filmList = event.target.parentNode.parentNode.nextElementSibling;
-  filmList.innerHTML = '';
-  switch (event.target.value) {
-    case "popularity.desc":
-      results = results.sort((a, b) => {
-        return b.popularity - a.popularity;
-      });
-      break;
-
-    case "popularity.asc":
-      results = results.sort((a, b) => {
-        return a.popularity - b.popularity;
-      });
-      break;
-
-    case "original_title.desc":
-      results = results.sort((a, b) => {
-        return -a.title.localeCompare(b.title);
-      });
-      break;
-
-    case 'original_title.asc':
-      results = results.sort((a, b) => {
-        return a.title.localeCompare(b.title);
-      });
-      break;
-
-    case 'vote_average.desc':
-      results = results.sort((a, b) => {
-        return b.vote_average - a.vote_average;
-      });
-      break;
-
-    case 'vote_average.asc':
-      results = results.sort((a, b) => {
-        return a.vote_average - b.vote_average;
-      });
-      break;
-
-    default:
-      break;
-  }
+function applyMarkup(results) {
   const markup = searchResult(results);
-  filmList.insertAdjacentHTML("beforeend", markup);
+  refs.searchSection.innerHTML = markup;
+  applyTheme();
+}
+
+refs.sortCont.addEventListener("change", event => {
+  results = sort(results, event.target.value);
+  applyMarkup(results);
 });
 
-export {
-  results
-}
+refs.filterEl.addEventListener("change", event => {
+  const filtered = filter(originalResults);
+  if (filtered && filtered.length > 0) {
+    results = filtered;
+  }
+  applyMarkup(results);
+});
