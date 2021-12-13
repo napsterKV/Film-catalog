@@ -465,13 +465,6 @@ select option {
   transition: all 0.2s;
 }
 
-<<<<<<< HEAD
-@media screen and (min-width: 1024px) {
-  .search-section-cont {
-    justify-content: center;
-  }
-}
-=======
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
   .nav-list {
     justify-content: space-evenly;
@@ -579,4 +572,3 @@ select option {
     margin-right: 10px;
   }
 }
->>>>>>> ovrametsnew
