@@ -1,8 +1,8 @@
-@import url("./main.css");
+@import url('./main.css');
 
 .film-title {
   padding: 0;
-  padding-top: 110px;
+  padding-top: 95px;
   padding-bottom: 50px;
   display: flex;
   color: #fff;
@@ -77,14 +77,84 @@
   width: 300px;
 }
 
+.cast-list {
+  margin-bottom: 170px;
+}
+
+.film-cast {
+  margin-top: 50px;
+}
+
+.Section-title {
+  text-align: center;
+  font-size: 35px;
+  margin: 30px 0;
+}
+
+.film-cast-cont {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+}
+
+.cast-title {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.film-card-title h4 {
+  font-weight: normal;
+}
+
+.name-actor {
+  margin: 10px 0;
+}
+
+.film-card {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.poster-cast {
+  height: 100%;
+  position: relative;
+}
+
+.noposter-cast {
+  background-color: #dbdbdb;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 220px;
+}
+
+.noposter-cast img {
+  height: 50%;
+}
+
+.noposter .film-rating {
+  top: 75%;
+}
+
 .film-rating {
   position: absolute;
   width: 150px;
   height: 100px;
+  bottom: 50px;
+  left: 62.5%;
+  top: 83.5%;
   font-size: 23px;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  border-bottom-right-radius: 18px;
+  border-top-left-radius: 18px;
+  background-color: rgb(255, 174, 0);
 }
 
 .section-title {
@@ -113,7 +183,7 @@
   height: 220px;
   margin-bottom: 70px;
   margin-top: 35px;
-  font-family: "Shippori Antique";
+  font-family: 'Shippori Antique';
 }
 
 .similar-film-poster {
@@ -143,5 +213,173 @@
   line-height: 30px;
   border-bottom-right-radius: 18px;
   border-top-left-radius: 18px;
-  background: rgb(208, 146, 12); 
+  background: rgb(208, 146, 12);
+}
+
+/* ADAPTIVE */
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .poster {
+    margin-right: 70px;
+    margin-left: 20px;
+  }
+
+  .similar-films-list {
+    justify-content: space-around;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .poster {
+    margin-right: 25px;
+    margin-left: 15px;
+  }
+
+  .poster img {
+    width: 300px;
+  }
+
+  .film-rating {
+    width: 50%;
+    height: 25%;
+    left: 50%;
+    bottom: 0;
+    top: 75%;
+  }
+
+  .desc h2 {
+    font-size: 30px;
+  }
+
+  .desc h3 {
+    font-size: 20px;
+  }
+
+  .desc p {
+    font-size: 16px;
+  }
+
+  .desc h4 {
+    font-size: 16px;
+  }
+
+  .genres-list li {
+    font-size: 16px;
+  }
+
+  .film-cast-cont {
+    justify-content: space-evenly;
+  }
+
+  .film-trailer {
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .film-trailer iframe {
+    width: 90%;
+    height: 400px;
+    margin: 0;
+  }
+
+  .similar-films-list {
+    max-width: 745px;
+  }
+
+  .similar-film {
+    margin-bottom: 100px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .film-title {
+    padding-top: 170px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .poster {
+    margin-right: 20px;
+  }
+
+  .poster img {
+    width: 230px;
+  }
+
+  .noposter .film-rating {
+    left: 75%;
+    top: 80%;
+  }
+
+  .film-rating {
+    width: 100px;
+    height: 80px;
+    font-size: 16px;
+    top: 77%;
+    bottom: 0;
+    left: 57%;
+  }
+
+  .desc {
+    width: 95%;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .desc h2 {
+    font-size: 25px;
+  }
+
+  .desc h3 {
+    font-size: 20px;
+  }
+
+  .desc p {
+    font-size: 15px;
+  }
+
+  .film-cast-cont {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .film-trailer {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-title {
+    font-size: 30px;
+    margin-top: 0;
+  }
+
+  .film-trailer iframe {
+    height: 200px;
+  }
+
+  .film-similar-films {
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .film-similar-films .section-title {
+    margin-bottom: 20px;
+  }
+
+  .similar-film {
+    margin-bottom: 100px;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 424px) {
+  .similar-films-list {
+    width: 100%;
+    margin: 0;
+  }
 }

@@ -30,7 +30,7 @@ body {
 
 nav {
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   width: 100%;
   font-family: 'Poppins', sans-serif;
@@ -47,12 +47,15 @@ nav {
 }
 
 nav a {
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
   color: rgb(223, 223, 223);
 }
 
 .nav-list {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   list-style: none;
   gap: 2rem;
@@ -61,12 +64,18 @@ nav a {
 .nav-logo {
   font-size: 2.5rem;
   font-family: 'Montserrat', sans-serif;
-  margin-right: auto;
   color: rgb(223, 223, 223);
 }
 
 .nav-logo a {
   color: rgb(223, 223, 223);
+}
+
+.nav-items {
+  width: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .nav-item {
@@ -200,7 +209,6 @@ nav a {
 /* SEARCH SECTION */
 
 .hello-section {
-  margin-top: 66.4px;
   min-height: 350px;
   background-image: url('https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces/jTiQAusGG4dVLSb1WHme9I9R4NN.jpg');
   background-color: rgba(0, 0, 0, 0.8);
@@ -214,7 +222,7 @@ nav a {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-top: 50px;
+  padding-top: 100px;
 }
 
 .search-title h2 {
@@ -255,16 +263,16 @@ nav a {
 }
 
 .search input[type='submit']:active {
-  transform: perspective(1px) scale(.85);
+  transform: perspective(1px) scale(0.85);
   transition: transform 0.2s ease;
 }
 
 .search-results {
   z-index: 1;
   position: absolute;
+  width: 80%;
   background: #fafafa;
   list-style: none;
-  width: 80%;
   border-left: solid 2px grey;
   border-right: solid 2px grey;
   color: black;
@@ -291,12 +299,29 @@ nav a {
   padding-top: 80px;
 }
 
-.sect-title h2{
+.sect-title {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.sect-title h2 {
   font-weight: bold;
   font-size: 30px;
   margin-bottom: 30px;
   margin-left: 30px;
   text-align: left;
+}
+
+.sort-by {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sort-by h2 {
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 .latest-section i {
@@ -309,6 +334,19 @@ nav a {
 
 .top-rated-section i {
   color: #ffb11f;
+}
+
+.upcoming-section i {
+  color: #15a011;
+}
+
+.poster {
+  position: relative;
+}
+
+.noposter {
+  background-color: #dbdbdb;
+  border-radius: 20px;
 }
 
 .film-list {
@@ -324,7 +362,7 @@ nav a {
   width: 150px;
   position: relative;
   height: 220px;
-  margin: 20px 20px 60px;
+  margin: 20px 20px 120px;
   font-family: 'Shippori Antique';
 }
 
@@ -339,21 +377,22 @@ nav a {
 .film-rating {
   position: absolute;
   color: white;
-  bottom: 0;
-  right: 0;
   width: 50px;
   height: 30px;
+  bottom: 0;
+  right: 0;
   text-align: center;
   line-height: 30px;
   border-bottom-right-radius: 18px;
   border-top-left-radius: 18px;
-  background: rgb(255, 174, 0);
+  background: rgb(208, 146, 12);
 }
 
 .film-card-title {
   text-align: center;
   color: rgb(0, 0, 0);
   font-weight: 400;
+  margin-top: 10px;
 }
 
 footer {
@@ -380,7 +419,7 @@ footer {
 }
 
 .mail svg:hover {
-  color: #ffbb00;
+  color: #e60e0e;
 }
 
 .telegram svg {
@@ -404,4 +443,132 @@ footer {
 
 .telephone svg:hover {
   color: #0ba705;
+}
+
+/* SORT */
+
+select {
+  width: 135px;
+  text-align: center;
+  height: 40px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.2s;
+  border: none;
+  border-radius: 15px;
+  background-color: #cf1717;
+  color: #fff;
+  padding-right: 2px;
+}
+
+select option {
+  transition: all 0.2s;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .nav-list {
+    justify-content: space-evenly;
+  }
+
+  .nav-items {
+    width: 40%;
+  }
+
+  .search-title {
+    text-align: center;
+  }
+
+  .search {
+    text-align: center;
+  }
+
+  .search-results {
+    left: 50%;
+    transform: translatex(-50%);
+  }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .nav-list {
+    justify-content: space-evenly;
+  }
+
+  .nav-items {
+    width: 45%;
+  }
+
+  .search-title {
+    text-align: center;
+  }
+
+  .search {
+    text-align: center;
+  }
+
+  .search-results {
+    left: 50%;
+    transform: translatex(-50%);
+  }
+
+  .copyright h2 {
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .nav-list {
+    flex-direction: column;
+    margin: 10px 0;
+    gap: 0;
+  }
+
+  .nav-items {
+    flex-direction: column;
+  }
+
+  .search-section-cont {
+    padding-top: 170px;
+    padding-bottom: 20px;
+  }
+
+  .search-title {
+    text-align: center;
+  }
+
+  .search {
+    text-align: center;
+  }
+
+  .search-results {
+    left: 50%;
+    transform: translatex(-50%);
+  }
+
+  .sect-title {
+    flex-direction: column;
+  }
+
+  .sect-title h2 {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .sort-by {
+    align-items: center;
+    margin-right: 10px;
+    margin-bottom: 30px;
+  }
+
+  select {
+    width: 150px;
+  }
+
+  .copyright h2 {
+    font-size: 18px;
+  }
+
+  .copyright h2:nth-child(2) {
+    margin-right: 10px;
+  }
 }

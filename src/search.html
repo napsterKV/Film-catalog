@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -24,3 +25,48 @@
     <script src="./js/search.js"></script>
   </body>
 </html>
+=======
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/search.css">
+  <title>Search Results</title>
+</head>
+
+<body>
+  <include src="./partials/header.html"></include>
+  <section>
+    <div class="search-title-sect">
+      <h2 class="request-title">Results on request "<i><span class="request"></span></i>":</h2>
+      <div class="functions">
+        <div class="filter-by">
+          <h2>Filter by genres:</h2>
+          <include src="./partials/filter.html"></include>
+          <p>* Hold down the Ctrl (Windows) or Command (Mac) button to select multiple options *</p>
+        </div>
+        <div class="sort-by">
+          <h2>Sort by:</h2>
+          <include src="./partials/sort.html"></include>
+        </div>
+      </div>
+    </div>
+
+    <div class="container search-res-section">
+    </div>
+    <div class="page-changer">
+      <ul class="page-list">
+
+      </ul>
+    </div>
+  </section>
+  <include src="./partials/footer.html"></include>
+  <script src="./js/search.js" type="module"></script>
+</body>
+
+</html>
+
+</html>
+>>>>>>> origin/stanislavchuk
