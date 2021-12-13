@@ -15,14 +15,16 @@
   <section>
     <div class="search-title-sect">
       <h2 class="request-title">Results on request "<i><span class="request"></span></i>":</h2>
-      <div class="filter-by">
+      <div class="functions">
+        <div class="filter-by">
           <h2>Filter by genres:</h2>
           <include src="./partials/filter.html"></include>
           <p>* Hold down the Ctrl (Windows) or Command (Mac) button to select multiple options *</p>
-      </div>
-      <div class="sort-by">
-        <h2>Sort by:</h2>
-        <include src="./partials/sort.html"></include>
+        </div>
+        <div class="sort-by">
+          <h2>Sort by:</h2>
+          <include src="./partials/sort.html"></include>
+        </div>
       </div>
     </div>
 
@@ -35,10 +37,9 @@
     </div>
   </section>
   <include src="./partials/footer.html"></include>
-  <script src="./js/toolbar.js"></script>
-  <script src="./js/search.js"></script>
-  <script src="./js/filter.js"></script>
+  <script src="./js/search.js" type="module"></script>
 </body>
 
 </html>
+
 </html>

@@ -1,8 +1,10 @@
 import debounce from 'lodash.debounce';
 import filmLayout from "../templates/film.hbs";
 import searchResultLayout from "../templates/searchResult.hbs";
+import {sort} from "./sort.js";
 
 const MOVIE_API = "https://api.themoviedb.org/3/movie/";
+const API_KEY = "170b9b9397b0574b7d603cba918ea1f4";
 const refs = {
   searchForm: document.querySelector(".search-form"),
   searchInput: document.querySelector(".search-form input[type=text]"),
@@ -14,16 +16,7 @@ const refs = {
   upcomingFilmList: document.querySelector(".upcoming-film-list")
 }
 
-const results = {
-  nowPlaying: [],
-  popular: [],
-  topRated: [],
-  upcoming: []
-};
-
 sessionStorage.removeItem("page");
-
-
 
 refs.searchForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -32,7 +25,7 @@ refs.searchForm.addEventListener("submit", (event) => {
 
 refs.searchInput.addEventListener("input", debounce(e => {
   if (e.target.value != '') {
-    fetch(`https://api.themoviedb.org/3/search/movie?api_key=170b9b9397b0574b7d603cba918ea1f4&language=en-US&query=${e.target.value}&page=1`).then(res => res.json())
+    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${e.target.value}&page=1`).then(res => res.json())
       .then(res => {
         if (res.results) {
           res.results.length = 10;
@@ -46,45 +39,32 @@ refs.searchInput.addEventListener("input", debounce(e => {
   };
 }, 500));
 
-window.onload = () => {
-  fetch(`${MOVIE_API}now_playing?api_key=170b9b9397b0574b7d603cba918ea1f4&language=en-US`).then(res => res.json())
-    .then(res => {
-      results.nowPlaying = res.results;
-      let markup = ``;
-      markup += filmLayout(res.results);
-      refs.latestFilmList.insertAdjacentHTML("beforeend", markup)
-    });
-
-
-  fetch(`${MOVIE_API}popular?api_key=170b9b9397b0574b7d603cba918ea1f4&language=en-US`).then(res => res.json())
-    .then(res => {
-      results.popular = res.results;
-      let markup = ``;
-      markup += filmLayout(res.results);
-      refs.popularFilmList.insertAdjacentHTML("beforeend", markup)
-    });
-
-  fetch(`${MOVIE_API}top_rated?api_key=170b9b9397b0574b7d603cba918ea1f4&language=en-US`).then(res => res.json())
-    .then(res => {
-      results.topRated = res.results;
-      let markup = ``;
-      markup += filmLayout(res.results);
-      refs.topRatedFilmList.insertAdjacentHTML("beforeend", markup)
-    });
-
-  fetch(`${MOVIE_API}upcoming?api_key=170b9b9397b0574b7d603cba918ea1f4&language=en-US`).then(res => res.json())
-    .then(res => {
-      results.upcoming = res.results;
-      let markup = ``;
-      markup += filmLayout(res.results);
-      refs.upcomingFilmList.insertAdjacentHTML("beforeend", markup)
-    });
-};
-
-const getResults = (source) => {
-  return results[source];
+function applyMarkup(results, element) {
+  const markup = filmLayout(results);
+  element.insertAdjacentHTML("beforeend", markup);
+  if(document.querySelector("body").classList.contains("dark-theme")) {
+    Array.from(document.querySelectorAll(".film-card-title")).forEach(el => {
+      el.style.color = "white"; 
+    })
+  }
 }
 
-export {
-  getResults
+function fetchData(url, element) {
+  fetch(`${MOVIE_API}${url}?api_key=${API_KEY}&language=en-US`).then(res => res.json())
+    .then(res => {
+      const sortElement = element.previousElementSibling.querySelector("#sort");
+      sortElement.addEventListener("change", event => {
+        element.innerHTML = '';
+        const results = sort(res.results, event.target.value);
+        applyMarkup(results, element);
+      });
+      applyMarkup(res.results, element);
+    });
+}
+
+window.onload = () => {
+  fetchData("now_playing", refs.latestFilmList);
+  fetchData("popular", refs.popularFilmList);
+  fetchData("top_rated", refs.topRatedFilmList);
+  fetchData("upcoming", refs.upcomingFilmList);
 };

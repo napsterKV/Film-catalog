@@ -1,7 +1,3 @@
-const {
-  stubFalse
-} = require("lodash");
-
 const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
@@ -61,11 +57,17 @@ if (currentTheme === Theme.DARK) {
 
 body.classList.add(currentTheme);
 
-checkbox.addEventListener("change", event => {
+checkbox.addEventListener("change", changeTheme);
+
+function changeTheme() {
   body.classList.remove(currentTheme);
   currentTheme = currentTheme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT;
   body.classList.add(currentTheme);
   setTheme(currentTheme);
+  applyTheme();
+}
+
+function applyTheme() {
   interfaceObject.forEach(obj => {
     obj.className = "";
     if (currentTheme === Theme.DARK) {
@@ -93,7 +95,12 @@ checkbox.addEventListener("change", event => {
     }
   });
   castList.forEach(cast => {
-    cast.style.borderColor = "white";
+    if (currentTheme === Theme.DARK) {
+      cast.style.borderColor = "white";
+    } else {
+      cast.style.borderColor = "black";
+    }
+    
   });
   pageList.forEach(item => {
     if (currentTheme === Theme.DARK && !item.classList.contains('active')) {
@@ -111,4 +118,8 @@ checkbox.addEventListener("change", event => {
     }
 
   });
-})
+}
+
+export {
+  applyTheme
+}
