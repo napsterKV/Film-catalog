@@ -130,15 +130,19 @@
   }
 
   .search-title-sect {
-    padding-top: 140px;
+    padding-top: 100px;
   }
 
-  .filter-by h2 {
-    font-size: 15px;
+  .functions {
+    width: 100%;
   }
 
-  .sort-by h2 {
-    font-size: 15px;
+  .functions h2 {
+    font-size: 20px;
+  }
+
+  .functions p {
+    display: none;
   }
 
   .desc {
@@ -146,7 +150,7 @@
   }
 
   .request-title {
-    font-size: 15px;
+    font-size: 25px;
   }
 
   .name {
@@ -161,12 +165,49 @@
     padding: 0;
     margin: 0;
   }
-
-
 }
 
 @media screen and (min-width: 480px) and (max-width: 767px) {
   .desc {
     margin: 0 20px;
+  }
+
+  .functions h2 {
+    font-size: 20px;
+  }
+
+  .functions p {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .functions p {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 374px) {
+  .poster {
+    min-width: 150px;
+    margin-right: 30px;
+  }
+
+  .functions {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .functions h2 {
+    font-size: 20px;
+  }
+
+  .functions p {
+    display: none;
+  }
+
+  .sort-by {
+    margin-top: 30px;
   }
 }
