@@ -43,9 +43,7 @@ fetch(`${MOVIE_API}${id}?api_key=${API_KEY}&language=en-US`)
   })
   .catch(error => console.error(error));
 
-fetch(
-    `https://api.themoviedb.org/3//movie/${id}/credits?api_key=170b9b9397b0574b7d603cba918ea1f4&language=en-US`,
-  )
+fetch(`${MOVIE_API}${id}/credits?api_key=${API_KEY}&language=en-US`)
   .then(res => res.json())
   .then(result => {
     applyCast(result.cast, filmActors);
@@ -91,10 +89,10 @@ function applyCast(value, markupCast) {
   }
   value.forEach(actor => {
     if (!actor.profile_path) {
-      actor.profile_path = "https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-4-user-grey-d8fe957375e70239d6abdd549fd7568c89281b2179b5f4470e2e12895792dfa5.svg";
+      actor.photo = "https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-4-user-grey-d8fe957375e70239d6abdd549fd7568c89281b2179b5f4470e2e12895792dfa5.svg";
       actor.posterClass = "noposter-cast";
     } else {
-      actor.profile_path = `https://www.themoviedb.org/t/p/original${actor.profile_path}`;
+      actor.photo = `https://www.themoviedb.org/t/p/original${actor.profile_path}`;
       actor.posterClass = "";
     }
   });
